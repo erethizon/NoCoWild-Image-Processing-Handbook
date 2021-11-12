@@ -1,0 +1,2 @@
+# Retrieve SD Cards from Cameras
+This step takes place in the field. Be sure you know which card  comes from which camera and the site name. You should have a paper data sheet on which you record this information. Keep the SD cards clean and dry.

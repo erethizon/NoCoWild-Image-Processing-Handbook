@@ -5,5 +5,11 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# About this Document
+# Preface {-}
+```{r, echo = FALSE, NoCoLogo}
+#add NoCoWild logo 
+knitr::include_graphics("images/NoCoWildLogo.jpg") #figure
+
+```
+This book is designed to guide students in the Barthelmess research lab, affectionally known as the *SLU Mammal Crew*, in the process of processing game camera images for upload to the zooniverse platform. It is meant as a follow along guide that lives on the web.
 

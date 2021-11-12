@@ -1,0 +1,60 @@
+# Upload manifest and images to Zooniverse via Panoptes
+
+
+The Zooniverse platform allows you to upload images for processing by
+drag-and-drop. This works fine for up to several hundred images, but is
+problematic when you have more images. As a result, we use a
+command-line method to upload our files to the Zooniverse.
+
+To upload images at once, we install and use the "[Panoptes Command Line
+Interface](https://github.com/zooniverse/panoptes-cli#installation)"
+from the Zooniverse. Instructions are provided at the Panoptes
+hyperlink. However, the instructions are not quite up to date. Using
+python version 3, you need to change some of the text to python3 and
+pip3.
+
+However, once you have the panoptes client installed, uploading is very
+straightforward.
+
+First, create an empty subject set in your Zooniverse project. Name it
+something useful. For example, "2021 Round 1 images". **Do not upload a
+manifest or any images to the subject set.** See Figure 16 for details.
+
+![](media/image21.png){width="6.346153762029746in"
+height="3.5798818897637794in"}
+
+[]{#_Ref71106723 .anchor}Figure 16. Screenshot of the subject sets
+creator on the Zooniverse platform.
+
+Look near the top of the page to find the unique number that the
+Zooniverse assigns to your subject set. You will need to use this number
+in the command-line, so write it down. In our example (Figure 16) the
+unique number for Round 1 Batch 2 is #73895.
+
+Once you have the number written down, go to your terminal interface.
+Navigate to the folder containing the images you wish to upload and the
+manifest for those images. These are the only things that should be in
+that folder, and you should have BOTH images and the manifest before you
+do the upload.
+
+Now, type the following into the command line:
+
+> \$ panoptes subject-set upload-subjects 73895 manifest.csv
+
+But change the number to whatever the subject set number is that you
+wrote down and change manifest.csv to whatever the name of the manifest
+file is (but make sure it ends with .csv).
+
+Panoptes may throw a warning message, something like "Broken libmagic
+installation detected...." but just ignore that warning. You'll see
+something like Figure 17 as the computer works to upload the images.
+Depending on how many images are in the folder, this step could take
+more than an hour to complete. Do not use the iMac for anything else
+while this process takes place.
+
+![](media/image22.png){width="6.5in" height="1.2291666666666667in"}
+
+[]{#_Ref71107143 .anchor}Figure 17. Sample screen read out as panoptes
+loads images to the Zooniverse.
+
+**You did it! Time to celebrate!**

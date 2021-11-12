@@ -858,7 +858,7 @@ external hard drive. Paste the manifest file into the folder of images.
 **The only things in this folder should be the actual image files and
 the manifest.**
 
-# Upload images and manifest to the Zooniverse
+# Upload images and manifest to the Zooniverse 
 
 The Zooniverse platform allows you to upload images for processing by
 drag-and-drop. This works fine for up to several hundred images, but is

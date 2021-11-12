@@ -1,0 +1,86 @@
+# Use ExifTool to bulk-extract metadata from images
+
+Use exiftool program in command line ("terminal" in mac speak) to
+capture image metadata\
+For more information, consult this series of tutorials on line:
+<https://www.weareavp.com/exiftool-tutorial-series/> (video 4 has good
+info).
+
+Exiftool will allow you to batch extract data from a whole folder of
+images and save it to a .csv file. We need this .csv for use in R.
+
+You can generate the csv from within the directory of images, or from
+the parent directory (the one containing the directory of images). The
+code will be slightly different. We will write the csv from the parent
+directory to prevent having anything in our image folder other than
+images. The code to write the csv from within the image directory is
+available in the appendix if for some reason you should need it.
+
+## Write csv from the parent directory
+
+You should create the csv by specifying the folder containing the images
+for which you want the data, without being in that folder. From the
+folder with the images, use cd .. to navigate to the parent folder that
+contains the image folder.
+
+For the purpose of this example, assume that all of the images are in a
+folder called \"Card 4\"
+
+Next write the following in the command line:
+
+> \$exiftool --common -csv Card\\ 4 \> correctfilename.csv
+
+This code tells the computer to "Open exiftool, select the "common"
+(rather than all) the exif data, and make a csv using all of the images
+in the \"Card 4\" folder and save it to a file called
+correctfilename.csv in the parent directory. (Wondering why we typed
+Card\\ 4 rather than just Card 4 in our line of code? See the \" Note
+About Directory Names\" part of this document in section 3 above.)
+
+> This command will do two things:
+
+1.  It will open as the directory with the images
+
+2.  It will save the csv to the parent, rather than the child directory.
+
+## Assign the csv a correct file name
+
+In the code above, we used \"correctfilename.csv\" as a placeholder file
+name for the csv file that we were making with exifTool. In reality, we
+want to use meaningful file names whenever we create files. Keep in mind
+that the file is going to be moved, stored, and opened again, perhaps
+years later. We need to know what it is! Thus we will use a meaningful
+file naming convention.
+
+We\'d like to know, just from the file name, several things:
+
+1.  What the file contains (exif data)
+
+2.  What set of images the file is for (timeframe and round, if
+    relevant). Recall that the camera and sd card names are already
+    imbedded in the image names, so we don\'t need that info in the file
+    name.
+
+So for data from the fall 2021 camera trapping season, we would use the
+following components in the file name:
+
+-   \"exif\" to tell us that it contains exif data
+
+-   \"2021\" to tell us the year it is from
+
+-   \"R1\" or \"R2\" etc. to tell us the round of deployments
+
+-   The name of the folder containing the images it is referencing.
+
+Thus, the line of code we would use to create the exif metadata file
+from the parent folder would be:
+
+> \$exiftool --common -csv Card\\ 4 \> exif_2021_R1.csv
+
+## Moving the file to the correct location
+
+The last step in all of this image processing is to move the exif
+metadata file you just created to the main NoCoWild Data subfolder.
+
+Navigate to t://Bart_s04/Research_group/NoCoWild/Data/exif_metadata and
+save a copy of the file you just created there.
