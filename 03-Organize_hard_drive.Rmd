@@ -17,9 +17,9 @@ On the external hard drive (called "NoCoWild"), we create a folder called *Raw* 
 
 **Be sure to check with Erika to make sure you know what file and image naming conventions are currently in use**.
 
-(ref:figure1) Organization of the "Raw" folder containing the original, unmodified images files.
+(ref:fig3-1) Organization of the "Raw" folder containing the original, unmodified images files.
 
-```{r, echo = FALSE, figure1, fig.cap = '(ref:figure1)'}
+```{r, echo = FALSE, fig3-1, fig.cap = '(ref:fig3-1)'}
 #add figure 1 and a text reference as its caption
 knitr::include_graphics("images/fig3.1.Raw files organization.jpg") #figure
 ```
@@ -37,9 +37,9 @@ There is a great deal of processing we need to do in order to prepare our images
 
 To do so, once we have all of the photos archived in the "Raw" folder, we copy them to another folder called "Processed" and then rename each image file according to its camera and SD card number and, in some cases, round and/or site. An example of the final product is shown in figure 3.2. It is easiest to complete these steps on the iMac in the lab.
 
-(ref:figure2) "Raw" and "Processed" folders and example file names within each.
+(ref:fig3-2) "Raw" and "Processed" folders and example file names within each.
 
-```{r, echo = FALSE, figure2, fig.cap = '(ref:figure2)'}
+```{r, echo = FALSE, fig3-2, fig.cap = '(ref:fig3-2)'}
 #add figure 2 and a text reference as its caption
 knitr::include_graphics("images/fig3.2.raw_and_processed_files.jpg") #figure
 ```
@@ -51,9 +51,9 @@ Now that we have the Processed folder, along with all of its subfolders, we can 
 
 We rename each image file so that the image name is a string of characters containing some combination of camera, SD card, Round, and possibly site. All of the pictures in the single folder will receive the same code, because they come from the same Camera and SD card combination. The flow chart for determining the proper code is as shown in Figure 3.3.
 
-(ref:figure3) Image naming conventions depending on camera number, SD card number, and possibly deployment round and site.
+(ref:fig3-3) Image naming conventions depending on camera number, SD card number, and possibly deployment round and site.
 
-```{r, echo = FALSE, figure3, fig.cap = '(ref:figure3)'}
+```{r, echo = FALSE, fig3-3, fig.cap = '(ref:fig3-3)'}
 #add figure 3 and a text reference as its caption
 knitr::include_graphics("images/fig3.3.file_naming_flow_diagram.jpg")
 #figure 3
@@ -68,11 +68,11 @@ Once you have your folder pasted into the "Processed" folder and appropriately r
     
 
 
-(ref:figure4) File folder open showing original *bland, non-informative* file names. We need unique names for images that include reference to camera and SD card number as well as, in some cases, round and/or site.
+(ref:fig3-4) File folder open showing original *bland, non-informative* file names. We need unique names for images that include reference to camera and SD card number as well as, in some cases, round and/or site.
 
 
 
-```{r, echo = FALSE, figure4, fig.cap = '(ref:figure4)'}
+```{r, echo = FALSE, fig3-4, fig.cap = '(ref:fig3-4)'}
 #add figure 4 and a text reference as its caption
 knitr::include_graphics("images/fig3.4.blandly_named_image_files.png") #figure
 ```
@@ -81,10 +81,10 @@ knitr::include_graphics("images/fig3.4.blandly_named_image_files.png") #figure
 
 3. With all of the images selected, right-click the mouse and choose Rename (figure 3.5) 
 
-(ref:figure5) Right-click to open the "Rename files" dialog box. 
+(ref:fig3-5) Right-click to open the "Rename files" dialog box. 
 
 
-```{r, echo = FALSE, figure5, fig.cap = '(ref:figure5)'}
+```{r, echo = FALSE, fig3-5, fig.cap = '(ref:fig3-5)'}
 #add figure 5 and a text reference as its caption
 knitr::include_graphics("images/fig3.5.rename_files.png") #figure
 ```
@@ -98,10 +98,10 @@ knitr::include_graphics("images/fig3.5.rename_files.png") #figure
 
 In this example, the images all came from Donnerville State Forest and are from Round 1. They are from camera 43, SD card 93. Hence "C043_SD093_DON_R1" is typed into the "Replace with" box.
 
-(ref:figure6) Find the "IMG" part of each file name and replace it with the appropriate combination of camera, SD card, site and round codes. Make sure that the example looks correct before choosing "rename."
+(ref:fig3-6) Find the "IMG" part of each file name and replace it with the appropriate combination of camera, SD card, site and round codes. Make sure that the example looks correct before choosing "rename."
 
 
-```{r, echo = FALSE, figure6, fig.cap = '(ref:figure6)'}
+```{r, echo = FALSE, fig3-6, fig.cap = '(ref:fig3-6)'}
 #add figure 6 and a text reference as its caption
 knitr::include_graphics("images/fig3.6.replace_text.png") #figure 6
 ```
@@ -110,9 +110,9 @@ knitr::include_graphics("images/fig3.6.replace_text.png") #figure 6
 5.  If you forget to add an element to a text name, (e.g. you forget to put the site code or round number), you can use the same process as in Step 4 above to rename the files again, but this time, put the incorrect parts of the filename in the Find search box and the new, corrected string in the Replace text box (figure 3.7). 
 
 
-(ref:figure7) How to repair new image file names if you make a mistake in Step 4.
+(ref:fig3-7) How to repair new image file names if you make a mistake in Step 4.
 
-```{r, echo = FALSE, figure7, fig.cap = '(ref:figure7)'}
+```{r, echo = FALSE, fig3-7, fig.cap = '(ref:fig3-7)'}
 #add figure 7 and a text reference as its caption
 knitr::include_graphics("images/fig3.7.replace_text_2.png")
 #figure 7
@@ -121,9 +121,9 @@ knitr::include_graphics("images/fig3.7.replace_text_2.png")
 When you are finished, you should see that your folder includes a set of
 renamed image files (example in figure 3.8).
 
-(ref:figure8) View of folder containing correctly re-assigned image file names.
+(ref:fig3-8) View of folder containing correctly re-assigned image file names.
 
-```{r, echo = FALSE, figure8, fig.cap = '(ref:figure8)'}
+```{r, echo = FALSE, fig3-8, fig.cap = '(ref:fig3-8)'}
 #add figure 8 and its figure caption
 knitr::include_graphics("images/fig3.8.final_view_renamed_images.png")
 ```
@@ -134,9 +134,9 @@ Repeat these steps to save and rename any folders of images you import to the Pr
 
 At the end of the photo organization step of our workflow, you will have a set of subfolders containing original, unmodified image files in the Raw folder and a second set of subfolders in the Processed folder containing the modified images (figure 3.9)
 
-(ref:figure9) Summary view of Raw and Processed folder organization on the external hard drive.
+(ref:fig3-9) Summary view of Raw and Processed folder organization on the external hard drive.
 
-```{r, echo = FALSE, figure9, fig.cap = '(ref:figure9)'}
+```{r, echo = FALSE, fig3-9, fig.cap = '(ref:fig3-9)'}
 #add figure 9 and caption
 knitr::include_graphics("images/fig3.2.raw_and_processed_files.jpg")
 ```
