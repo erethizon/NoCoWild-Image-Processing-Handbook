@@ -1,0 +1,31 @@
+# Use RStudio to assign each image to the proper camera trap "event" and to create the Zooniverse manifest
+
+
+Within the RStudio project, navigate to Code -\> PreZooniverse -\> and
+open the file called PreZooniversePrep.Rmd. Step through this file,
+making sure to establish the proper directory paths and input file
+names. If all of the code runs successfully, you will have created a
+manifest file that will be located in Output -\> PreZooniverse -\>
+Manifests. An intermediate file will also be saved to Output -\>
+PreZooniverse -\> ImagesByEvent.
+
+## Copy the manifest file to the correct location on the t:// drive
+
+Navigate to the Files pane in RStudio and to the folder containing the
+manifest file you just created. Check the box next to the manifest file
+you wish to copy (there may be several in this folder). Choose the
+\"More\" button at the top of the Files pane and select \"Copy to\"
+(Figure 15).
+
+![Graphical user interface, text, application, email Description
+automatically generated](media/image20.png){width="4.361111111111111in"
+height="2.125in"}
+
+[]{#_Ref71106567 .anchor}Figure 15. Copy the manifest file to the
+t:drive.
+
+A dialog box will open.
+
+Navigate to t://Bart_s04/Research_group/NoCoWild/Zooniverse/Manifests
+and save the file there, keeping the file name the same. Note that you
+will need an active connection to the t:drive for this to work.
