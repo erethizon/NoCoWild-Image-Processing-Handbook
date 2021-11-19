@@ -86,3 +86,6 @@ installing-exiftool-on-a-mac-1
 using-exiftool-to-write-metadata-csv-from-within-image-directory-1
 fig:figure2
 file-and-folder-locations
+fig:figure3
+fig:figure4
+fig:figure5
