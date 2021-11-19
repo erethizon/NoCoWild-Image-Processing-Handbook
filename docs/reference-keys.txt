@@ -89,3 +89,11 @@ file-and-folder-locations
 fig:figure3
 fig:figure4
 fig:figure5
+create-the-processed-folder
+rename-image-files-within-each-subfolder
+step-by-step-instructions
+overview-2
+fig:figure6
+fig:figure7
+fig:figure8
+fig:figure9
