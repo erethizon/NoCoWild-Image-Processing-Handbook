@@ -43,3 +43,7 @@ finding-your-way-around-the-mac-terminal-command-line-interface
 running-exiftool-via-the-terminal.
 viewing-exif-data-on-a-single-image
 using-exiftool-to-add-copyright-information-to-the-images.
+using-exiftool
+resize-images-for-upload-to-zooniverse-via-imagemagick
+resizing-images-1
+fig:fig4-2

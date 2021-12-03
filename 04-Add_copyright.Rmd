@@ -1,6 +1,8 @@
 # Add copyright and read EXIF data from images to .csv via exifTool
 
-Any time an image is made with a digital camera (including your phone camera, our game cameras, etc.), regardless of make, data are embedded in the image file. You never see these data unless you look for them. The embedded information is called "EXIF data" where EXIF stands for "exchangeable image file format" and it includes all of the metadata associated with an image, such as the exposure time, ISO, etc. Programs such as Adobe Lightroom can be used to view the exif data. How much exif data is collected depends on the camera and its features. For example, a camera with built in gps will encode the location where the photo was taken. If you're not into digital photography, you may not be aware that this information is stored with every digital image. We will need exif data to be able to assign images to proper events based on their time stamp. We will also add exif data to our images by adding copyright information. We will use a free tool called "ExifTool" to do so.
+Any time an image is made with a digital camera (including your phone camera, our game cameras, etc.), regardless of make, data are embedded in the image file. You never see these data unless you look for them. The embedded information is called "EXIF data" where EXIF stands for "exchangeable image file format" and it includes all of the metadata associated with an image, such as the exposure time, ISO, etc. Programs such as Adobe Lightroom can be used to view the exif data. How much exif data is collected depends on the camera and its features. For example, a camera with built in gps will encode the location where the photo was taken. If you're not into digital photography, you may not be aware that this information is stored with every digital image. 
+
+We will need exif data to be able to assign images to proper events based on their time stamp. We will also add exif data to our images by adding copyright information. We will use a free tool called "ExifTool" to do so.
 
 ## Finding your way around the mac terminal (command line interface)
 Use of ExifTool (and another tool called "ImageMagick" we will use in a later step) requires use of the command-line interface. On a mac, this interface is called the "terminal" and is also sometimes referred to as "bash." 
@@ -26,7 +28,7 @@ Table 4.1 shows a list of some of the common command-line functions.
                  where "directory" is the name of the directory you
                  wish to navigate to.
 
-  cd ..          changes your directory from the parent directory to the
+  cd ..          changes your directory to the parent directory from the
                  one you are currently in (note the space before the ..)
 
   ls             lists all visible files in your directory
@@ -70,11 +72,12 @@ will then indicate the full path to that directory. Try this:
 
 Terminal will change the working directory to the correct file path!
 
-## Running ExifTool via the terminal.
+## Using ExifTool
+### Running ExifTool via the terminal.
 Running ExifTool is fairly straightforward, as long as you don't get too
 bogged down in command-line commands, which can be confusing. To start
 ExifTool, type "exiftool" after the prompt on the command line. If the
-computer tells you that ExifTool does not exist, see **Appendix 1.Additional Details and code snippets**, for instructions on how to install ExifTool.
+computer tells you that ExifTool does not exist, see **Appendix 1. Additional Details and code snippets**, for instructions on how to install ExifTool.
 
 -   If ExifTool is installed, the manual (called the "man" or "manpage"
     in command line talk) window will open orienting you to features of
@@ -85,10 +88,20 @@ computer tells you that ExifTool does not exist, see **Appendix 1.Additional Det
 
 -   Exit the man by typing q and return.
 
-## Viewing exif data on a single image
+### Viewing exif data on a single image
 
 In the terminal, change to the directory that contains the files you
-want information from. Note the name of an image in the directory.
+want information from. You can easily do this by first typing `cd ` after the terminal prompt and then dragging the folder icon from the folder on the NoCoWild hard drive that you wish to move to onto the terminal prompt (fig. 4.2A).
+
+(ref:fig4-2) Changing directories and modifying exif data using the terminal interface. **A** shows in yellow the root directory terminal prompt. **B** shows in yellow the text that is automatically added after `cd  ` when you drop a folder icon onto the terminal window following the `cd ` text.  **C** shows in yellow the new terminal prompt, reflecting the directory in which the computer is working. 
+
+```{r, echo = FALSE, fig4-2, fig.cap = '(ref:fig4-2)'}
+#add figure 4.2 and caption
+knitr::include_graphics("images/fig.4.2.bash_window1.png")
+```
+
+
+Note the name of an image in the directory.
 
 Then, in the terminal at the command-line prompt (usually a `\$ ` or `\>`),
 type
@@ -99,25 +112,19 @@ where imagename.jpg is the name of the file you want data from. The
 computer will then display the information you seek. An example of
 output is in Figure 12 below.
 
-![](media/image18.png){width="5.214633639545057in"
-height="2.5243055555555554in"}
-
-[]{#_Ref71037481 .anchor}Figure 13. Example output from viewing exif
-data from a single image with exiftool.
+**Figure 13. Example output from viewing exif data from a single image with exiftool.**
 
 You will use this method to ensure that copyright information is
 properly added.
 
-## Using ExifTool to add copyright information to the images.
+### Using ExifTool to add copyright information to the images.
 
 To add copyright information to the images, make sure you are in the
 folder that contains the images you wish to add copyright information,
 and type the following at the command-line:
 
 ```
-\$ exiftool --overwrite_original -rights="Copyright"
-
- -CopyrightNotice="Bart Lab and Nature Up North" \*.JPG
+$ exiftool -overwrite_original -rights="Copyright" -CopyrightNotice="Bart Lab and Nature Up North" *.JPG
 
  (put this all on one line)
 ```
@@ -128,10 +135,9 @@ and fill the field with "Bart Lab and Nature Up North". Do this for all
 of the files in the folder."
 
 Once you have run this code, examine the exif data for a few of the
-images in the folder using the method described in Step 3 above and make
-sure the copyright information is present.
+images in the folder using the method described for viewing exif data for a single image above and make sure the copyright information is present.
 
-# Use imagemagick to resize images to 900kb
+## Use imagemagick to resize images to 900kb
 
 The Zooniverse sets a maximum image size of 1MB. Our cameras take higher
 resolution pictures, generally in the realm of 3.5MB. Thus, we would
@@ -144,7 +150,7 @@ and code snippets, for instructions on how to install "Homebrew", a
 package manager for the Mac, and then use Homebrew to install
 imagemagick.
 
-## Resizing images
+### Resizing images
 
 With imagemagick installed, move to the directory with the set of images
 you wish to resize and type the following line of code in the terminal:
