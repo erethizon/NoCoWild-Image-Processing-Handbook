@@ -24,7 +24,7 @@
 <meta name="author" content="Erika L. Barthelmess" />
 
 
-<meta name="date" content="2021-12-03" />
+<meta name="date" content="2021-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -108,14 +108,11 @@
 <li class="chapter" data-level="4.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#viewing-exif-data-on-a-single-image"><i class="fa fa-check"></i><b>4.2.2</b> Viewing exif data on a single image</a></li>
 <li class="chapter" data-level="4.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images."><i class="fa fa-check"></i><b>4.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#use-imagemagick-to-resize-images-to-900kb"><i class="fa fa-check"></i><b>4.3</b> Use imagemagick to resize images to 900kb</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#resizing-images"><i class="fa fa-check"></i><b>4.3.1</b> Resizing images</a></li>
-</ul></li>
+<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#summary-1"><i class="fa fa-check"></i><b>4.3</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><i class="fa fa-check"></i><b>5</b> Resize images for upload to Zooniverse via ImageMagick</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html#resizing-images-1"><i class="fa fa-check"></i><b>5.1</b> Resizing images</a></li>
+<li class="chapter" data-level="5.1" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html#resizing-images"><i class="fa fa-check"></i><b>5.1</b> Resizing images</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -150,7 +147,7 @@
 </ol>
 <div id="step-1-archiving-the-files" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Step 1: Archiving the files</h2>
-<p>On the external hard drive (called “NoCoWild”), we create a folder called <em>Raw</em> within which we keep a set of original images that we <strong>never</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> modify. Every set of images from a single SD card in a single camera will be collected together into a unique folder. We organize folders by calendar year, and usually also by round number (a round is a single phase of camera deployments) as well as camera location (e.g. forest name). An example is shown in figure 3.1. Depending on the year, the folder names may be slightly different than what you see in fig. 3.1 due to differences in study design in a particular year.</p>
+<p>On the external hard drive (called “NoCoWild”), we create a folder called <em>Raw</em> within which we keep a set of original images that we <strong>never</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> modify. Every set of images from a single SD card in a single camera will be collected together into a unique folder. We organize folders by calendar year, and usually also by round number (a round is a single phase of camera deployments) as well as camera location (e.g. forest name). An example is shown in figure 3.1. Depending on the year, the folder names may be slightly different than what you see in fig. 3.1 due to differences in study design in a particular year.</p>
 <p><strong>Be sure to check with Erika to make sure you know what file and image naming conventions are currently in use</strong>.</p>
 
 <div class="figure"><span id="fig:fig3-1"></span>
@@ -161,7 +158,7 @@ Figure 3.1: Organization of the “Raw” folder containing the original, unmodi
 </div>
 <p>Within the folder for a given year, we create the folder called <em>Raw</em>. Then within the <em>Raw</em> folder we create, as needed, a folder for each site, and within the folder for each site, a folder for each round (if needed). We do not make specific site folders unless we have multiple cameras deployed at the same site at the same time. Then we create the lowest-level folders, single folders for each game camera &amp; SD card combination (Figure 3.1).</p>
 <p>You may need to create these folders when you first upload the data. Please use leading zeros and make sure every camera number is recorded as 3 digits and every SD card number is recorded as three digits. For example, for images from Camera 24 SD card 5, you would have C024_SD005.</p>
-<p><strong>As a reminder, all photos inside the <em>Raw</em> folder are the originals and should NEVER BE ALTERED<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</strong></p>
+<p><strong>As a reminder, all photos inside the <em>Raw</em> folder are the originals and should NEVER BE ALTERED<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</strong></p>
 </div>
 <div id="step-2.-copying-and-renaming-the-files" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Step 2. Copying and renaming the files</h2>
@@ -268,9 +265,9 @@ Figure 3.9: Summary view of Raw and Processed folder organization on the externa
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Not ever, as in not even one single time!<a href="organize-images-on-the-external-hard-drive.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Nope - don’t even think about altering the files in the Raw folder!!!<a href="organize-images-on-the-external-hard-drive.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p>Not ever, as in not even one single time!<a href="organize-images-on-the-external-hard-drive.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Nope - don’t even think about altering the files in the Raw folder!!!<a href="organize-images-on-the-external-hard-drive.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

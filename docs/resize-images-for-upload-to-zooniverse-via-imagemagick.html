@@ -148,7 +148,7 @@ imagemagick.</p>
 <h2><span class="header-section-number">5.1</span> Resizing images</h2>
 <p>With imagemagick installed, open a terminal window and move to the directory with the images you wish to resize (see chapter 4to learn more about how move around the terminal).</p>
 <p>Once you have changed directories to the desired folder, type the following line of code in the terminal:</p>
-<p><code>magick mogrify -resize "2000&gt;" --define jpeg:extent=900kb *.JPG</code></p>
+<p><code>magick mogrify -resize "2000&gt;" -define jpeg:extent=900kb *.JPG</code></p>
 <p>Note that the .JPG is case-sensitive. If the images are labeled .jpg,
 then type that instead.</p>
 <p>This line of code basically says “Turn on imagemagick and use it to
@@ -161,6 +161,14 @@ took 1hr and 10 minutes.</p>
 
 </div>
 </div>
+
+
+
+
+
+
+
+
             </section>
 
           </div>
