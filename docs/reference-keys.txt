@@ -47,3 +47,4 @@ using-exiftool
 resize-images-for-upload-to-zooniverse-via-imagemagick
 resizing-images-1
 fig:fig4-2
+summary-1
