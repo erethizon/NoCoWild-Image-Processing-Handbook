@@ -13,7 +13,7 @@ imagemagick.
 
 ## Resizing images
 
-With imagemagick installed, open a terminal window and move to the directory with the images you wish to resize (see chapter 4to learn more about how move around the terminal).
+With imagemagick installed, open a terminal window and move to the directory with the images you wish to resize (see chapter 4 to learn more about how move around the terminal).
 
 Once you have changed directories to the desired folder, type the following line of code in the terminal:
 
@@ -33,3 +33,5 @@ took 1hr and 10 minutes.
 
 Proceed through all of the folders, resizing images until all images in the **Processed** subfolders are less than 1MB in size.
 
+## Summary
+At the end of the image resize step, each folder of *processed* images will have a set of images each less than 1kb in size.

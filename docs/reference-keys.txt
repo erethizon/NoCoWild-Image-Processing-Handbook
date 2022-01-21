@@ -35,3 +35,9 @@ using-exiftool-to-add-copyright-information-to-the-images.
 summary-1
 resize-images-for-upload-to-zooniverse-via-imagemagick
 resizing-images
+summary-2
+use-exiftool-to-bulk-extract-metadata-from-images
+write-csv-from-the-parent-directory
+assign-the-csv-a-correct-file-name
+moving-the-file-to-the-correct-location
+summary-3
