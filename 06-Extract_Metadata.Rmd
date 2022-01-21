@@ -64,7 +64,7 @@ following components in the file name:
 Thus, the line of code we would use to create the exif metadata file
 from the parent folder would be:
 
-$ exiftool --common -csv Card_4  exif_2021_R1.csv
+`$ exiftool --common -csv Card_4  exif_2021_R1.csv`
 
 ## Moving the file to the correct location
 
