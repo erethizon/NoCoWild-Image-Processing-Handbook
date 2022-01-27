@@ -41,3 +41,13 @@ write-csv-from-the-parent-directory
 assign-the-csv-a-correct-file-name
 moving-the-file-to-the-correct-location
 summary-3
+fig:fig7-1
+familiarize-yourself-with-nocowilddataprocessing-rstudio-project
+overview
+organization-of-our-project-in-rstudio
+code
+data
+output
+accessing-the-project-from-github
+fig:fig7-2
+summary-4

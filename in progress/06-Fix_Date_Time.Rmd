@@ -1,10 +1,17 @@
-# Use ExifTool to bulk-extract metadata from images
+# Use ExifTool to repair incorrect time stamps on images
 
-Now that we have added copyright information and resized all of our images, we need to create a data file with information about each image we plan to upload to the zooniverse.Exiftool will allow you to batch extract data from a whole folder of images and save it to a .csv file. We need this .csv for use in R.
+Sometimes a camera malfunctions and resets the time stamp on each image to the incorrect date. Other times the camera trapper overlooks setting the date and time correctly in the camera when it is deployed. In either case, we need to repair the date and time on the images so that when we assign them to events, they occur in the proper order.
 
-For more information about the following steps, consult [this series of tutorials](https://www.weareavp.com/exiftool-tutorial-series) on line. Video 4 in the series is especially helpful.
+For more information about the following steps, consult [this webpage](https://www.labnol.org/software/change-date-of-pictures/28336/) on line.
 
-We will again be using terminal and the command-line interface. We will generate the csv from the parent directory (the one containing the directory of images).We do so to prevent having anything in our image folder other than images (i.e. the new .csv file gets saved one level above the folder with images). 
+We will again be using terminal and the command-line interface. 
+
+
+Code to add one month to the Date / Time Original exif field:
+
+From within the directory in which you plan to fix the dates/times, run the following line of code. IN this example, you are adding one month to the time stamp and are doing it to all of the image files in the directory.
+
+`exiftool "-DateTimeOriginal+=0:1:0 0:0:0" *.JPG`
 
 ## Write csv from the parent directory
 
@@ -18,7 +25,7 @@ folder called *Card_4*
 
 If you haven't already done so, navigate in the terminal to the parent directory that holds Card_4. Then write the following in the command line:
 
-`$ exiftool -common -csv Card_4 > correctfilename.csv`
+$ exiftool --common -csv Card_4 > correctfilename.csv
 
 This code tells the computer to "Open exiftool, select the "common"
 (rather than all) the exif data, and make a csv using all of the images
@@ -64,7 +71,7 @@ following components in the file name:
 Thus, the line of code we would use to create the exif metadata file
 from the parent folder would be:
 
-`$ exiftool -common -csv Card_4 > exif_2021_R1.csv`
+`$ exiftool --common -csv Card_4  exif_2021_R1.csv`
 
 ## Moving the file to the correct location
 
