@@ -11,6 +11,8 @@ fig:fig3-8
 fig:fig3-9
 fig:fig4-1
 fig:fig4-2
+fig:fig7-1
+fig:fig7-2
 introduction
 process-overview
 datasheet-file-and-folder-locations
@@ -41,7 +43,6 @@ write-csv-from-the-parent-directory
 assign-the-csv-a-correct-file-name
 moving-the-file-to-the-correct-location
 summary-3
-fig:fig7-1
 familiarize-yourself-with-nocowilddataprocessing-rstudio-project
 overview
 organization-of-our-project-in-rstudio
@@ -49,5 +50,4 @@ code
 data
 output
 accessing-the-project-from-github
-fig:fig7-2
 summary-4

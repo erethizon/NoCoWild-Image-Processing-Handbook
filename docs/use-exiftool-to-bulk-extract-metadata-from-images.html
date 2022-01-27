@@ -24,7 +24,7 @@
 <meta name="author" content="Erika L. Barthelmess" />
 
 
-<meta name="date" content="2022-01-21" />
+<meta name="date" content="2022-01-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="resize-images-for-upload-to-zooniverse-via-imagemagick.html"/>
-
+<link rel="next" href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -122,6 +122,18 @@
 <li class="chapter" data-level="6.3" data-path="use-exiftool-to-bulk-extract-metadata-from-images.html"><a href="use-exiftool-to-bulk-extract-metadata-from-images.html#moving-the-file-to-the-correct-location"><i class="fa fa-check"></i><b>6.3</b> Moving the file to the correct location</a></li>
 <li class="chapter" data-level="6.4" data-path="use-exiftool-to-bulk-extract-metadata-from-images.html"><a href="use-exiftool-to-bulk-extract-metadata-from-images.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><i class="fa fa-check"></i><b>7</b> Familiarize yourself with NoCoWildDataProcessing RStudio project</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#overview"><i class="fa fa-check"></i><b>7.1</b> Overview</a></li>
+<li class="chapter" data-level="7.2" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#organization-of-our-project-in-rstudio"><i class="fa fa-check"></i><b>7.2</b> Organization of our project in RStudio</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#code"><i class="fa fa-check"></i><b>7.2.1</b> Code</a></li>
+<li class="chapter" data-level="7.2.2" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#data"><i class="fa fa-check"></i><b>7.2.2</b> Data</a></li>
+<li class="chapter" data-level="7.2.3" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#output"><i class="fa fa-check"></i><b>7.2.3</b> Output</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#accessing-the-project-from-github"><i class="fa fa-check"></i><b>7.3</b> Accessing the project from Github</a></li>
+<li class="chapter" data-level="7.4" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#summary-4"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -155,7 +167,7 @@ contains the image folder.</p>
 <p>For the purpose of this example, assume that all of the images are in a
 folder called <em>Card_4</em></p>
 <p>If you haven’t already done so, navigate in the terminal to the parent directory that holds Card_4. Then write the following in the command line:</p>
-<p>$ exiftool –common -csv Card_4 correctfilename.csv</p>
+<p><code>$ exiftool -common -csv Card_4 &gt; correctfilename.csv</code></p>
 <p>This code tells the computer to “Open exiftool, select the”common”
 (rather than all) the exif data, and make a csv using all of the images
 in the Card_4 folder and save it to a file called
@@ -193,7 +205,7 @@ following components in the file name:</p>
 </ul>
 <p>Thus, the line of code we would use to create the exif metadata file
 from the parent folder would be:</p>
-<p><code>$ exiftool --common -csv Card_4  exif_2021_R1.csv</code></p>
+<p><code>$ exiftool -common -csv Card_4 &gt; exif_2021_R1.csv</code></p>
 </div>
 <div id="moving-the-file-to-the-correct-location" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Moving the file to the correct location</h2>
@@ -208,21 +220,13 @@ save a copy of the file you just created there.</p>
 
 </div>
 </div>
-
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
