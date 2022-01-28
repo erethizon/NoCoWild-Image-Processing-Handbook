@@ -1,6 +1,5 @@
 # Organize images on the external hard drive
 
-
 Back in the lab, download all of the photos from each SD card onto the external hard drive called "NoCoWild". Use the iMac which has a built in SD card reader on the back side of the monitor.
 
 There are two main steps to organizing the photos:

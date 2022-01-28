@@ -1,0 +1,16 @@
+# Add any additional data to the manifest file
+
+This required step is done using Excel to add any added metadata to the manifest that you would like to be associated with the images. This step must be done before pushing images to the Zooniverse. Talk with Erika about whether you will be adding metadata to the manifest.
+
+## Manifest file conventions
+
+
+
+## Copy the manifest file (again) to the correct location on the external hard drive.
+
+We store a copy of the manifest file on the t:drive because it is automatically backed up. However, to upload the manifest to Zooniverse, it needs to be located in the folder of images we intend to upload. For that reason, copy the manifest file you just created on the t:drive and navigate to the folder of images you plan to upload, located on the external hard drive. Paste the manifest file into the folder of images. The correct folder is usually called "All_" something (e.g. "All_R1", "All_AvS")
+
+**The only things in the folder with images to upload should be the actual image files and the manifest.**
+
+## Summary
+At the end of this step, you will have a single folder including processed image files and the zooniverse manifest file ready for upload to the zooniverse platform.
