@@ -13,7 +13,7 @@ Navigate to the Files pane in RStudio and to the folder containing the manifest 
 
 ```{r, echo = FALSE, fig8-1, fig.cap = '(ref:fig8-1)'}
 #add figure 1 and a text reference as its caption
-knitr::include_graphics("images/fig8.1.CopyToManifests.jpg") #figure
+knitr::include_graphics("images/fig8.1CopyToManifests.jpg") #figure
 ```
 
 A dialog box will open.

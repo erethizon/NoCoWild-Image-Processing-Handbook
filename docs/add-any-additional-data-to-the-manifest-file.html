@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook</title>
-  <meta name="description" content="Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook" />
+  <title>Chapter 9 Add any additional data to the manifest file | North Country Wild Image Processing and Uploading Handbook</title>
+  <meta name="description" content="Chapter 9 Add any additional data to the manifest file | North Country Wild Image Processing and Uploading Handbook" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook" />
+  <meta property="og:title" content="Chapter 9 Add any additional data to the manifest file | North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook" />
+  <meta name="twitter:title" content="Chapter 9 Add any additional data to the manifest file | North Country Wild Image Processing and Uploading Handbook" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="use-exiftool-to-bulk-extract-metadata-from-images.html"/>
-<link rel="next" href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html"/>
+<link rel="prev" href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html"/>
+
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -163,106 +163,39 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="familiarize-yourself-with-nocowilddataprocessing-rstudio-project" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Familiarize yourself with NoCoWildDataProcessing RStudio project</h1>
-<div id="overview" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Overview</h2>
-<p>Let’s take a step back and think about our workflow. At this point, we have organized all of our image files on the hard drive, creating both the <em>raw</em> and <em>processed</em> folders of images. We have renamed images to reflect the metadata we wish to tie them to, have added copyright information and resized the images for upload to zooniverse. If necessary, we also repaired any problems with Dates and Times in the image exif data. We’ve generated a .csv file that has, for each image, the important bits of exifdata stored in the .csv file.</p>
-<p>Before we can push the images to the Zooniverse platform for ID, we need to create what the Zooniverse folks call the <em>manifest file</em>, a .csv that is uploaded alongside the images that contains important metadata about them that the Zooniverse interprets.</p>
-<p>We set our game cameras to take a burst of up to three images each time
-the camera is triggered. We call each set of 3 images a single
-<em>event.</em> However, our folder of images is just a set of files. We need
-a way to assign each image to the proper camera trap event. We have R
-code that we use to do just that.</p>
+<div id="add-any-additional-data-to-the-manifest-file" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Add any additional data to the manifest file</h1>
+<p>This required step is done using Excel to add any added metadata to the manifest that you would like to be associated with the images. This step must be done before pushing images to the Zooniverse. Talk with Erika about whether you will be adding metadata to the manifest.</p>
+<div id="manifest-file-conventions" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Manifest file conventions</h2>
 </div>
-<div id="organization-of-our-project-in-rstudio" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Organization of our project in RStudio</h2>
-<p>We have a RStudio project called <em>NoCoWildDataProcessing</em> that we use for preparing the Zooniverse manifest file.</p>
-<p>To assign images to the proper event, you will need to know the location
-(file path) to the folder containing the images (and only the images, no
-other files can be in the folder) and the location of the exif metadata
-file for that folder that was created in Section 6 above.</p>
-<p>We use a special structure (Figure 7.1) to keep this project running
-smoothly when being used by many different people.</p>
-
-<div class="figure"><span id="fig:fig7-1"></span>
-<img src="images/fig7.1.RStudio_organization.png" alt="Organization of the NoCoWildDataProcessing project in RStudio."  />
-<p class="caption">
-Figure 7.1: Organization of the NoCoWildDataProcessing project in RStudio.
-</p>
+<div id="copy-the-manifest-file-again-to-the-correct-location-on-the-external-hard-drive." class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Copy the manifest file (again) to the correct location on the external hard drive.</h2>
+<p>We store a copy of the manifest file on the t:drive because it is automatically backed up. However, to upload the manifest to Zooniverse, it needs to be located in the folder of images we intend to upload. For that reason, copy the manifest file you just created on the t:drive and navigate to the folder of images you plan to upload, located on the external hard drive. Paste the manifest file into the folder of images. The correct folder is usually called “All_” something (e.g. “All_R1”, “All_AvS”)</p>
+<p><strong>The only things in the folder with images to upload should be the actual image files and the manifest.</strong></p>
 </div>
-<div id="code" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Code</h3>
-<p>The <code>Code</code> folder is where we keep all of the .Rmd files and .R files
-for actually running processes in RStudio. The Code folder contains
-three subfolders: <code>PreZooniverse</code>, <code>PostZooniverse</code>, and
-<code>Functions.</code> In this manual, we will only make use of the
-PreZooniverse and Functions subfolders.</p>
-<p>PreZooniverse contains two subfolders: <em>Explanatory Rmd files</em> and
-<em>Code to Run</em>. You will be using the .Rmd file called
-<em>PreZooniverse.Rmd</em> located in the <em>Code to Run</em> folder.</p>
-<p>PreZooniverse.Rmd relies on several custom functions located in the
-Functions folder. You will not need to look inside of the Functions
-folder, but it must be in place and must contain the correct .R files in
-order for the scripts in PreZooniverse.Rmd to run properly.</p>
-<p>The files in the Explanatory Rmd files folder provide more detailed
-descriptions of the steps involved in developing the functions we use in
-our project.</p>
-</div>
-<div id="data" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Data</h3>
-<p>The Data folder is where we keep only <strong>source data files</strong>. These are
-files that R will suck in for processing, but that will <strong>never</strong><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> be
-edited or saved over in order to ensure reproducibility.</p>
-</div>
-<div id="output" class="section level3" number="7.2.3">
-<h3><span class="header-section-number">7.2.3</span> Output</h3>
-<p>The Output folder is where we save the outputs of the code (as opposed
-to source files used to produce the analysis). This is where we save all
-kinds of outputs including data files and plots. The Output folder is
-arranged into various subfolders. The key Output subfolders for the
-purposes of this manual are in the PreZooniverse subfolder and are
-called ImagesByEvent and Manifests.</p>
-</div>
-</div>
-<div id="accessing-the-project-from-github" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Accessing the project from Github</h2>
-<p>Github is a version control system used by people who code. We use
-Github because it allows folks to simultaneously work on the project and
-it <strong>protects</strong> us against unwanted changes (we can roll back the code
-to any prior state). However, using github within RStudio, though pretty
-straightforward, can be a bit confusing at first.</p>
-<p>All of the R code you need to process the file is in the RStudio project
-called <strong>NoCoWildDataProcessing.</strong> It is available for <a href="https://github.com/erethizon/NoCoWildDataProcessing">access on github</a> (fig 7.2):</p>
-
-<div class="figure"><span id="fig:fig7-2"></span>
-<img src="images/fig7.2.github_view.png" alt="The NoCoWildDataProcessing project repository on GitHub"  />
-<p class="caption">
-Figure 7.2: The NoCoWildDataProcessing project repository on GitHub
-</p>
-</div>
-<p><strong>Please work with Erika to make sure you are accessing
-the GitHub project correctly so as to allow different folks to work on the
-project at the same time.</strong></p>
-</div>
-<div id="summary-4" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Summary</h2>
+<div id="summary-5" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Summary</h2>
+<p>At the end of this step, you will have a single folder including processed image files and the zooniverse manifest file ready for upload to the zooniverse platform.</p>
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="4">
-<li id="fn4"><p>Never ever ever!<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#fnref4" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="use-exiftool-to-bulk-extract-metadata-from-images.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -294,7 +227,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/07-Familiarize-data-processing.Rmd",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/09-Add_data_to_manifest.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -302,7 +235,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/07-Familiarize-data-processing.Rmd",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/09-Add_data_to_manifest.Rmd",
 "text": null
 },
 "download": null,

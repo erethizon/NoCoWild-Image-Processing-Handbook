@@ -13,6 +13,7 @@ fig:fig4-1
 fig:fig4-2
 fig:fig7-1
 fig:fig7-2
+fig:fig8-1
 introduction
 process-overview
 datasheet-file-and-folder-locations
@@ -51,3 +52,9 @@ data
 output
 accessing-the-project-from-github
 summary-4
+use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest
+copy-the-manifest-file-to-the-correct-location-on-the-t-drive
+add-any-additional-data-to-the-manifest-file
+manifest-file-conventions
+copy-the-manifest-file-again-to-the-correct-location-on-the-external-hard-drive.
+summary-5
