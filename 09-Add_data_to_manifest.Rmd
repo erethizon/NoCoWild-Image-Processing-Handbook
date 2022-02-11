@@ -4,7 +4,13 @@ This required step is done using Excel to add any added metadata to the manifest
 
 ## Manifest file conventions
 
+The first four columns of the manifest file are predetermined by our R code and indicate
 
+You can add columns of data to the manifest to keep information associated with events. For example, you might want to add a column for the forest name or columns with the latitude and longitude of the camera locations. There may be information that you'd like to keep hidden from the zooniverse volunteers who classify images for us. 
+
+- Any column field whose name begins with `!` will not be accessible to volunteers in the classification interface but will be available in the talk interface after classification.
+
+- Any column field whose name begins with `#` or `//` will never be shown to zooniverse volunteers, ever. 
 
 ## Copy the manifest file (again) to the correct location on the external hard drive.
 
