@@ -1,3 +1,9 @@
 # Retrieve SD Cards from Cameras
 
-This step takes place in the field. Be sure you know which card  comes from which camera and the site name. You should have a paper data sheet on which you record this information. Keep the SD cards clean and dry.
+To retrieve the SD cards means you need to visit the cameras in the field. Those trips entail either collecting the SD card and the camera, or visiting the camera to put in fresh batteries and a fresh SD card.
+
+It is critical that you keep track of which SD card comes from which camera and the site name. You should have a paper data sheet on which you record this information. Keep the SD cards clean and dry.
+
+When you return to the lab, you will use the card reader attached to the iMac to upload the images.
+
+Add picture here of someone in the field with a camera.

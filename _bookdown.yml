@@ -6,3 +6,6 @@ view: https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/maste
 language:
   ui:
     chapter_name: "Chapter "
+
+rmd_files:
+  ["index.Rmd", "Introduction.Rmd", "01-Process-Overview.Rmd"]

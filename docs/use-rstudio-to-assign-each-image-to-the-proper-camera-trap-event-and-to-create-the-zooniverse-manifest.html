@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Use RStudio to assign each image to the proper camera trap “event” and to create the Zooniverse manifest | North Country Wild Image Processing and Uploading Handbook</title>
   <meta name="description" content="Chapter 8 Use RStudio to assign each image to the proper camera trap “event” and to create the Zooniverse manifest | North Country Wild Image Processing and Uploading Handbook" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Use RStudio to assign each image to the proper camera trap “event” and to create the Zooniverse manifest | North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Erika L. Barthelmess" />
 
 
-<meta name="date" content="2022-01-28" />
+<meta name="date" content="2023-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"/>
 <link rel="next" href="add-any-additional-data-to-the-manifest-file.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -74,6 +73,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#process-overview"><i class="fa fa-check"></i><b>1.1</b> Process Overview</a></li>
@@ -96,19 +96,19 @@
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="organize-images-on-the-external-hard-drive.html"><a href="organize-images-on-the-external-hard-drive.html#summary"><i class="fa fa-check"></i><b>3.3</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><i class="fa fa-check"></i><b>4</b> Add copyright and read EXIF data from images to .csv via exifTool</a>
+<li class="chapter" data-level="4" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><i class="fa fa-check"></i><b>4</b> Add copyright and read EXIF data from images to .csv via exifTool</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#finding-your-way-around-the-mac-terminal-command-line-interface"><i class="fa fa-check"></i><b>4.1</b> Finding your way around the mac terminal (command line interface)</a>
+<li class="chapter" data-level="4.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#finding-your-way-around-the-mac-terminal-command-line-interface"><i class="fa fa-check"></i><b>4.1</b> Finding your way around the mac terminal (command line interface)</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#note-about-directory-names"><i class="fa fa-check"></i><b>4.1.1</b> Note about directory names</a></li>
+<li class="chapter" data-level="4.1.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#note-about-directory-names"><i class="fa fa-check"></i><b>4.1.1</b> Note about directory names</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#using-exiftool"><i class="fa fa-check"></i><b>4.2</b> Using ExifTool</a>
+<li class="chapter" data-level="4.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool"><i class="fa fa-check"></i><b>4.2</b> Using ExifTool</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#running-exiftool-via-the-terminal."><i class="fa fa-check"></i><b>4.2.1</b> Running ExifTool via the terminal.</a></li>
-<li class="chapter" data-level="4.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#viewing-exif-data-on-a-single-image"><i class="fa fa-check"></i><b>4.2.2</b> Viewing exif data on a single image</a></li>
-<li class="chapter" data-level="4.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images."><i class="fa fa-check"></i><b>4.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
+<li class="chapter" data-level="4.2.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#running-exiftool-via-the-terminal."><i class="fa fa-check"></i><b>4.2.1</b> Running ExifTool via the terminal.</a></li>
+<li class="chapter" data-level="4.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#viewing-exif-data-on-a-single-image"><i class="fa fa-check"></i><b>4.2.2</b> Viewing exif data on a single image</a></li>
+<li class="chapter" data-level="4.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images."><i class="fa fa-check"></i><b>4.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#summary-1"><i class="fa fa-check"></i><b>4.3</b> Summary</a></li>
+<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#summary-1"><i class="fa fa-check"></i><b>4.3</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><i class="fa fa-check"></i><b>5</b> Resize images for upload to Zooniverse via ImageMagick</a>
 <ul>
@@ -163,16 +163,16 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest" class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Use RStudio to assign each image to the proper camera trap “event” and to create the Zooniverse manifest</h1>
+<div id="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Use RStudio to assign each image to the proper camera trap “event” and to create the Zooniverse manifest<a href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html#use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Within the RStudio project, navigate to <strong>Code &gt; PreZooniverse</strong> and open the file called <strong>PreZooniversePrep.Rmd.</strong> Step through this file, making sure to establish the proper directory paths and input file names. If all of the code runs successfully, you will have created a manifest file that will be located in <strong>Output &gt; PreZooniverse &gt; Manifests</strong>. An intermediate file will also be saved to <strong>Output &gt; PreZooniverse &gt; ImagesByEvent</strong>.</p>
-<div id="copy-the-manifest-file-to-the-correct-location-on-the-t-drive" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Copy the manifest file to the correct location on the t:// drive</h2>
+<div id="copy-the-manifest-file-to-the-correct-location-on-the-t-drive" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Copy the manifest file to the correct location on the t:// drive<a href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html#copy-the-manifest-file-to-the-correct-location-on-the-t-drive" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Navigate to the Files pane in RStudio and to the folder containing the manifest file you just created. Check the box next to the manifest file you wish to copy (there may be several in this folder). Choose the
 “More” button at the top of the Files pane and select “Copy to”
 (Figure 8.1).</p>
 
-<div class="figure"><span id="fig:fig8-1"></span>
+<div class="figure"><span style="display:block;" id="fig:fig8-1"></span>
 <img src="images/fig8.1CopyToManifests.jpg" alt="Moving the manifest to the t:// drive."  />
 <p class="caption">
 Figure 8.1: Moving the manifest to the t:// drive.
@@ -193,7 +193,6 @@ Figure 8.1: Moving the manifest to the t:// drive.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -233,6 +232,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

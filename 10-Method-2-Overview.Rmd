@@ -1,0 +1,84 @@
+# (PART) Part 2 {-}
+# Introduction
+Managing thousands of game camera images and extracting data from them is a complex and somewhat daunting task. Keeping track of them over time, so that data between years can be examined and so that new questions can be asked of the data, requires careful thought and attention to detail.
+
+This book is a guide to managing those data. Ultimately, it will also present some basics on how to extract meaningful information from the data once images have been classified on the Zooniverse.
+
+Erika has been working with *SLU Mammal Crew* alum [Brett Ford](https://www.zooniverse.org/projects/barthelmess/north-country-wild/about/team), a data scientist at [Embark Vet](https://embarkvet.com/) to streamline the process of managing our camera trap data.
+
+This book is organized into three parts.
+
+Part I includes all of the general information about how files are organized for the project and is required reading for everyont.
+
+Part II presents the **preferred approach** for working with game camera images developed with Brett.  This approach uses a streamlined set of Python and R tools and reduces the possibility of errors.
+
+Part III presents a second, much more labor intensive and possibly error-prone approach. It is the approach that we used prior to working with Brett and is documented simply in case need arises. 
+
+Most readers should read through Parts I and II of the book.
+
+## Process Overview
+
+There are many steps required to properly process our game camera images. A workflow diagram (Figure 1.1) highlights the 9 steps that are required.
+
+
+
+
+(ref:figure1-1) Steps involved in preparing images for upload to Zooniverse
+
+
+
+```{r, echo = FALSE, figure1-1, fig.cap = '(ref:figure1-1)'}
+knitr::include_graphics("images/fig1.1.overall_workflow_diagram.jpg")
+```
+
+
+
+
+
+## Datasheet, File and Folder Locations
+### File and folder locations
+With camera traps, it is possible to generate a LOT of data, very quickly. Processing those data requires a lot of R files, as well. It is very easy to accidentally overwrite files or save things on e.g. your P:/ drive or your personal computer, making it very difficult for code to run well in the future (when the next student cannot access your files). For that reason, we have taken care to organize our files very carefully. *Please pay attention to the organization as described below and to apply it as you work on this project.*
+
+We work on this project from three file locations (Figure 1.2):
+
+(ref:fig1-2) File and folder organization for the North Country Wild Project
+
+1. The NoCoWild folder on the t:// drive
+    - t://Bart_s04/Research_group/NoCoWild
+
+2.  [A shared RStudio project on github](https://github.com/erethizon/NoCoWildDataProcessing)
+
+3.  An external hard drive attached to the iMac in JHS 115
+
+
+```{r, echo = FALSE, fig1-2, fig.cap = '(ref:fig1-2)'}
+#add figure 2 and a text reference as its caption
+knitr::include_graphics("images/fig1.2.file_folder_org.jpg") #figure
+```
+
+### Data sheets
+
+Blank copies of the paper data sheets we take into the field to record individual camera deployments can be found in the lab. In case you need to print more, the file is called *Camera deployment sheet* and there
+is a word copy as well as a pdf copy in the *Datasheets* folder in the *t:drive NoCoWild folder*.
+
+### Images
+
+Our game camera images take up a ton of hard drive space, so we keep them on an external hard drive attached to the iMac in the lab (Figure 1.2). That hard drive should **never**[^1], ever leave the lab!!! 
+
+In the unusual circumstance in which you can't work directly in the lab (thanks, COVID-19!) we have a second, back up hard drive for loan.
+
+The name of the main image hard drive is "NoCoWild". It contains
+images other than our game camera projects, as well. You may add images to this hard drive, but please don't delete images unless Erika is sitting next to you, saying "yes, it is ok to delete that" so that it can be her fault if something goes horribly wrong.
+
+### Data files
+
+We keep data files in two locations. Exif metadata files about sets of images (see below for explanation) as well as unmodified classification or other files from the Zooniverse platform are stored on the t:drive in the Data folder.
+
+The RStudio project is where we store some data products (after
+processing in R) and where we store all of the code we use for image processing and analysis. Depending on what stage of the project you are in, files may be found in the "Code", "Data" or "Output" folders.
+
+See Organization of our project in RStudio below for details.
+
+[^1]: I mean NEVER, EVER, EVER. Got it?
+
+

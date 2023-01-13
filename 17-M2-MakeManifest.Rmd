@@ -9,9 +9,9 @@ Navigate to the Files pane in RStudio and to the folder containing the manifest 
 "More" button at the top of the Files pane and select "Copy to"
 (Figure 8.1).
 
+(ref:fig8-1) Moving the manifest to the t:// drive.
 
-
-```{r, echo = FALSE, fig.cap = 'Moving the manifest to the t:// drive'}
+```{r, echo = FALSE, fig8-1, fig.cap = '(ref:fig8-1)'}
 #add figure 1 and a text reference as its caption
 knitr::include_graphics("images/fig8.1CopyToManifests.jpg") #figure
 ```

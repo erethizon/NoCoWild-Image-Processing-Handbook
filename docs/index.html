@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>North Country Wild Image Processing and Uploading Handbook</title>
   <meta name="description" content="North Country Wild Image Processing and Uploading Handbook" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Erika L. Barthelmess" />
 
 
-<meta name="date" content="2022-01-28" />
+<meta name="date" content="2023-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +31,9 @@
   
   
 
-<link rel="next" href="introduction.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="process-overview.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -74,15 +73,14 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<li class="chapter" data-level="1" data-path="process-overview.html"><a href="process-overview.html"><i class="fa fa-check"></i><b>1</b> Process Overview</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#process-overview"><i class="fa fa-check"></i><b>1.1</b> Process Overview</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#datasheet-file-and-folder-locations"><i class="fa fa-check"></i><b>1.2</b> Datasheet, File and Folder Locations</a>
+<li class="chapter" data-level="1.1" data-path="process-overview.html"><a href="process-overview.html#datasheet-file-and-folder-locations"><i class="fa fa-check"></i><b>1.1</b> Datasheet, File and Folder Locations</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#file-and-folder-locations"><i class="fa fa-check"></i><b>1.2.1</b> File and folder locations</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#data-sheets"><i class="fa fa-check"></i><b>1.2.2</b> Data sheets</a></li>
-<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#images"><i class="fa fa-check"></i><b>1.2.3</b> Images</a></li>
-<li class="chapter" data-level="1.2.4" data-path="introduction.html"><a href="introduction.html#data-files"><i class="fa fa-check"></i><b>1.2.4</b> Data files</a></li>
+<li class="chapter" data-level="1.1.1" data-path="process-overview.html"><a href="process-overview.html#file-and-folder-locations"><i class="fa fa-check"></i><b>1.1.1</b> File and folder locations</a></li>
+<li class="chapter" data-level="1.1.2" data-path="process-overview.html"><a href="process-overview.html#data-sheets"><i class="fa fa-check"></i><b>1.1.2</b> Data sheets</a></li>
+<li class="chapter" data-level="1.1.3" data-path="process-overview.html"><a href="process-overview.html#images"><i class="fa fa-check"></i><b>1.1.3</b> Images</a></li>
+<li class="chapter" data-level="1.1.4" data-path="process-overview.html"><a href="process-overview.html#data-files"><i class="fa fa-check"></i><b>1.1.4</b> Data files</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="retrieve-sd-cards-from-cameras.html"><a href="retrieve-sd-cards-from-cameras.html"><i class="fa fa-check"></i><b>2</b> Retrieve SD Cards from Cameras</a></li>
@@ -96,19 +94,19 @@
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="organize-images-on-the-external-hard-drive.html"><a href="organize-images-on-the-external-hard-drive.html#summary"><i class="fa fa-check"></i><b>3.3</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><i class="fa fa-check"></i><b>4</b> Add copyright and read EXIF data from images to .csv via exifTool</a>
+<li class="chapter" data-level="4" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><i class="fa fa-check"></i><b>4</b> Add copyright and read EXIF data from images to .csv via exifTool</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#finding-your-way-around-the-mac-terminal-command-line-interface"><i class="fa fa-check"></i><b>4.1</b> Finding your way around the mac terminal (command line interface)</a>
+<li class="chapter" data-level="4.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#finding-your-way-around-the-mac-terminal-command-line-interface"><i class="fa fa-check"></i><b>4.1</b> Finding your way around the mac terminal (command line interface)</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#note-about-directory-names"><i class="fa fa-check"></i><b>4.1.1</b> Note about directory names</a></li>
+<li class="chapter" data-level="4.1.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#note-about-directory-names"><i class="fa fa-check"></i><b>4.1.1</b> Note about directory names</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#using-exiftool"><i class="fa fa-check"></i><b>4.2</b> Using ExifTool</a>
+<li class="chapter" data-level="4.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool"><i class="fa fa-check"></i><b>4.2</b> Using ExifTool</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#running-exiftool-via-the-terminal."><i class="fa fa-check"></i><b>4.2.1</b> Running ExifTool via the terminal.</a></li>
-<li class="chapter" data-level="4.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#viewing-exif-data-on-a-single-image"><i class="fa fa-check"></i><b>4.2.2</b> Viewing exif data on a single image</a></li>
-<li class="chapter" data-level="4.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images."><i class="fa fa-check"></i><b>4.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
+<li class="chapter" data-level="4.2.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#running-exiftool-via-the-terminal."><i class="fa fa-check"></i><b>4.2.1</b> Running ExifTool via the terminal.</a></li>
+<li class="chapter" data-level="4.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#viewing-exif-data-on-a-single-image"><i class="fa fa-check"></i><b>4.2.2</b> Viewing exif data on a single image</a></li>
+<li class="chapter" data-level="4.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images."><i class="fa fa-check"></i><b>4.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#summary-1"><i class="fa fa-check"></i><b>4.3</b> Summary</a></li>
+<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#summary-1"><i class="fa fa-check"></i><b>4.3</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><i class="fa fa-check"></i><b>5</b> Resize images for upload to Zooniverse via ImageMagick</a>
 <ul>
@@ -144,6 +142,89 @@
 <li class="chapter" data-level="9.2" data-path="add-any-additional-data-to-the-manifest-file.html"><a href="add-any-additional-data-to-the-manifest-file.html#copy-the-manifest-file-again-to-the-correct-location-on-the-external-hard-drive."><i class="fa fa-check"></i><b>9.2</b> Copy the manifest file (again) to the correct location on the external hard drive.</a></li>
 <li class="chapter" data-level="9.3" data-path="add-any-additional-data-to-the-manifest-file.html"><a href="add-any-additional-data-to-the-manifest-file.html#summary-5"><i class="fa fa-check"></i><b>9.3</b> Summary</a></li>
 </ul></li>
+<li class="part"><span><b>I Part 2</b></span></li>
+<li class="chapter" data-level="10" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>10</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="introduction.html"><a href="introduction.html#process-overview-1"><i class="fa fa-check"></i><b>10.1</b> Process Overview</a></li>
+<li class="chapter" data-level="10.2" data-path="introduction.html"><a href="introduction.html#datasheet-file-and-folder-locations-1"><i class="fa fa-check"></i><b>10.2</b> Datasheet, File and Folder Locations</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="introduction.html"><a href="introduction.html#file-and-folder-locations-1"><i class="fa fa-check"></i><b>10.2.1</b> File and folder locations</a></li>
+<li class="chapter" data-level="10.2.2" data-path="introduction.html"><a href="introduction.html#data-sheets-1"><i class="fa fa-check"></i><b>10.2.2</b> Data sheets</a></li>
+<li class="chapter" data-level="10.2.3" data-path="introduction.html"><a href="introduction.html#images-1"><i class="fa fa-check"></i><b>10.2.3</b> Images</a></li>
+<li class="chapter" data-level="10.2.4" data-path="introduction.html"><a href="introduction.html#data-files-1"><i class="fa fa-check"></i><b>10.2.4</b> Data files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="retrieve-sd-cards-from-cameras-1.html"><a href="retrieve-sd-cards-from-cameras-1.html"><i class="fa fa-check"></i><b>11</b> Retrieve SD Cards from Cameras</a></li>
+<li class="chapter" data-level="12" data-path="organize-images-on-the-external-hard-drive-1.html"><a href="organize-images-on-the-external-hard-drive-1.html"><i class="fa fa-check"></i><b>12</b> Organize images on the external hard drive</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="organize-images-on-the-external-hard-drive-1.html"><a href="organize-images-on-the-external-hard-drive-1.html#step-1-archiving-the-files-1"><i class="fa fa-check"></i><b>12.1</b> Step 1: Archiving the files</a></li>
+<li class="chapter" data-level="12.2" data-path="organize-images-on-the-external-hard-drive-1.html"><a href="organize-images-on-the-external-hard-drive-1.html#step-2.-copying-and-renaming-the-files-1"><i class="fa fa-check"></i><b>12.2</b> Step 2. Copying and renaming the files</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="organize-images-on-the-external-hard-drive-1.html"><a href="organize-images-on-the-external-hard-drive-1.html#create-the-processed-folder-1"><i class="fa fa-check"></i><b>12.2.1</b> Create the Processed folder</a></li>
+<li class="chapter" data-level="12.2.2" data-path="organize-images-on-the-external-hard-drive-1.html"><a href="organize-images-on-the-external-hard-drive-1.html#rename-image-files-within-each-subfolder-1"><i class="fa fa-check"></i><b>12.2.2</b> Rename image files within each subfolder</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="organize-images-on-the-external-hard-drive-1.html"><a href="organize-images-on-the-external-hard-drive-1.html#summary-6"><i class="fa fa-check"></i><b>12.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><i class="fa fa-check"></i><b>13</b> Add copyright and read EXIF data from images to .csv via exifTool</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html#finding-your-way-around-the-mac-terminal-command-line-interface-1"><i class="fa fa-check"></i><b>13.1</b> Finding your way around the mac terminal (command line interface)</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html#note-about-directory-names-1"><i class="fa fa-check"></i><b>13.1.1</b> Note about directory names</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html#using-exiftool-1"><i class="fa fa-check"></i><b>13.2</b> Using ExifTool</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html#running-exiftool-via-the-terminal.-1"><i class="fa fa-check"></i><b>13.2.1</b> Running ExifTool via the terminal.</a></li>
+<li class="chapter" data-level="13.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html#viewing-exif-data-on-a-single-image-1"><i class="fa fa-check"></i><b>13.2.2</b> Viewing exif data on a single image</a></li>
+<li class="chapter" data-level="13.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html#using-exiftool-to-add-copyright-information-to-the-images.-1"><i class="fa fa-check"></i><b>13.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool-1.html#summary-7"><i class="fa fa-check"></i><b>13.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick-1.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick-1.html"><i class="fa fa-check"></i><b>14</b> Resize images for upload to Zooniverse via ImageMagick</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick-1.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick-1.html#resizing-images-1"><i class="fa fa-check"></i><b>14.1</b> Resizing images</a></li>
+<li class="chapter" data-level="14.2" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick-1.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick-1.html#summary-8"><i class="fa fa-check"></i><b>14.2</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="use-exiftool-to-bulk-extract-metadata-from-images-1.html"><a href="use-exiftool-to-bulk-extract-metadata-from-images-1.html"><i class="fa fa-check"></i><b>15</b> Use ExifTool to bulk-extract metadata from images</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="use-exiftool-to-bulk-extract-metadata-from-images-1.html"><a href="use-exiftool-to-bulk-extract-metadata-from-images-1.html#write-csv-from-the-parent-directory-1"><i class="fa fa-check"></i><b>15.1</b> Write csv from the parent directory</a></li>
+<li class="chapter" data-level="15.2" data-path="use-exiftool-to-bulk-extract-metadata-from-images-1.html"><a href="use-exiftool-to-bulk-extract-metadata-from-images-1.html#assign-the-csv-a-correct-file-name-1"><i class="fa fa-check"></i><b>15.2</b> Assign the csv a correct file name</a></li>
+<li class="chapter" data-level="15.3" data-path="use-exiftool-to-bulk-extract-metadata-from-images-1.html"><a href="use-exiftool-to-bulk-extract-metadata-from-images-1.html#moving-the-file-to-the-correct-location-1"><i class="fa fa-check"></i><b>15.3</b> Moving the file to the correct location</a></li>
+<li class="chapter" data-level="15.4" data-path="use-exiftool-to-bulk-extract-metadata-from-images-1.html"><a href="use-exiftool-to-bulk-extract-metadata-from-images-1.html#summary-9"><i class="fa fa-check"></i><b>15.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><i class="fa fa-check"></i><b>16</b> Familiarize yourself with NoCoWildDataProcessing RStudio project</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html#overview-1"><i class="fa fa-check"></i><b>16.1</b> Overview</a></li>
+<li class="chapter" data-level="16.2" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html#organization-of-our-project-in-rstudio-1"><i class="fa fa-check"></i><b>16.2</b> Organization of our project in RStudio</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html#code-1"><i class="fa fa-check"></i><b>16.2.1</b> Code</a></li>
+<li class="chapter" data-level="16.2.2" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html#data-1"><i class="fa fa-check"></i><b>16.2.2</b> Data</a></li>
+<li class="chapter" data-level="16.2.3" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html#output-1"><i class="fa fa-check"></i><b>16.2.3</b> Output</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html#accessing-the-project-from-github-1"><i class="fa fa-check"></i><b>16.3</b> Accessing the project from Github</a></li>
+<li class="chapter" data-level="16.4" data-path="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html"><a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project-1.html#summary-10"><i class="fa fa-check"></i><b>16.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest-1.html"><a href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest-1.html"><i class="fa fa-check"></i><b>17</b> Use RStudio to assign each image to the proper camera trap “event” and to create the Zooniverse manifest</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest-1.html"><a href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest-1.html#copy-the-manifest-file-to-the-correct-location-on-the-t-drive-1"><i class="fa fa-check"></i><b>17.1</b> Copy the manifest file to the correct location on the t:// drive</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="add-any-additional-data-to-the-manifest-file-1.html"><a href="add-any-additional-data-to-the-manifest-file-1.html"><i class="fa fa-check"></i><b>18</b> Add any additional data to the manifest file</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="add-any-additional-data-to-the-manifest-file-1.html"><a href="add-any-additional-data-to-the-manifest-file-1.html#manifest-file-conventions-1"><i class="fa fa-check"></i><b>18.1</b> Manifest file conventions</a></li>
+<li class="chapter" data-level="18.2" data-path="add-any-additional-data-to-the-manifest-file-1.html"><a href="add-any-additional-data-to-the-manifest-file-1.html#copy-the-manifest-file-again-to-the-correct-location-on-the-external-hard-drive.-1"><i class="fa fa-check"></i><b>18.2</b> Copy the manifest file (again) to the correct location on the external hard drive.</a></li>
+<li class="chapter" data-level="18.3" data-path="add-any-additional-data-to-the-manifest-file-1.html"><a href="add-any-additional-data-to-the-manifest-file-1.html#summary-11"><i class="fa fa-check"></i><b>18.3</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Part I</b></span></li>
+<li class="chapter" data-level="19" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>19</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="introduction-1.html"><a href="introduction-1.html#process-overview-2"><i class="fa fa-check"></i><b>19.1</b> Process Overview</a></li>
+<li class="chapter" data-level="19.2" data-path="introduction-1.html"><a href="introduction-1.html#datasheet-file-and-folder-locations-2"><i class="fa fa-check"></i><b>19.2</b> Datasheet, File and Folder Locations</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="introduction-1.html"><a href="introduction-1.html#file-and-folder-locations-2"><i class="fa fa-check"></i><b>19.2.1</b> File and folder locations</a></li>
+<li class="chapter" data-level="19.2.2" data-path="introduction-1.html"><a href="introduction-1.html#data-sheets-2"><i class="fa fa-check"></i><b>19.2.2</b> Data sheets</a></li>
+<li class="chapter" data-level="19.2.3" data-path="introduction-1.html"><a href="introduction-1.html#images-2"><i class="fa fa-check"></i><b>19.2.3</b> Images</a></li>
+<li class="chapter" data-level="19.2.4" data-path="introduction-1.html"><a href="introduction-1.html#data-files-2"><i class="fa fa-check"></i><b>19.2.4</b> Data files</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -166,12 +247,12 @@
 <div id="header">
 <h1 class="title">North Country Wild Image Processing and Uploading Handbook</h1>
 <p class="author"><em>Erika L. Barthelmess</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2022-01-28</em></p>
+<p class="date"><em>2023-01-13</em></p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><img src="images/NoCoWildLogo.jpg" /><!-- -->
-This book is designed to guide students in the Barthelmess research lab, affectionally known as the <em>SLU Mammal Crew</em>, in the process of processing game camera images for upload to the zooniverse platform. It is meant as a follow along guide that lives on the web.</p>
+This book is designed to guide students in the Barthelmess research lab, affectionally known as the <em>SLU Mammal Crew</em>, through the steps required to process game camera images for upload to the [zooniverse platform](<a href="https://www.zooniverse.org/projects/barthelmess/north-country-wild" class="uri">https://www.zooniverse.org/projects/barthelmess/north-country-wild</a>. It is meant as a follow along guide that lives on the web.</p>
 
 </div>
             </section>
@@ -180,11 +261,10 @@ This book is designed to guide students in the Barthelmess research lab, affecti
         </div>
       </div>
 
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="process-overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -224,6 +304,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Use ExifTool to bulk-extract metadata from images | North Country Wild Image Processing and Uploading Handbook</title>
   <meta name="description" content="Chapter 6 Use ExifTool to bulk-extract metadata from images | North Country Wild Image Processing and Uploading Handbook" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Use ExifTool to bulk-extract metadata from images | North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Erika L. Barthelmess" />
 
 
-<meta name="date" content="2022-01-28" />
+<meta name="date" content="2023-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="resize-images-for-upload-to-zooniverse-via-imagemagick.html"/>
 <link rel="next" href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -74,6 +73,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#process-overview"><i class="fa fa-check"></i><b>1.1</b> Process Overview</a></li>
@@ -96,19 +96,19 @@
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="organize-images-on-the-external-hard-drive.html"><a href="organize-images-on-the-external-hard-drive.html#summary"><i class="fa fa-check"></i><b>3.3</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><i class="fa fa-check"></i><b>4</b> Add copyright and read EXIF data from images to .csv via exifTool</a>
+<li class="chapter" data-level="4" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><i class="fa fa-check"></i><b>4</b> Add copyright and read EXIF data from images to .csv via exifTool</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#finding-your-way-around-the-mac-terminal-command-line-interface"><i class="fa fa-check"></i><b>4.1</b> Finding your way around the mac terminal (command line interface)</a>
+<li class="chapter" data-level="4.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#finding-your-way-around-the-mac-terminal-command-line-interface"><i class="fa fa-check"></i><b>4.1</b> Finding your way around the mac terminal (command line interface)</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#note-about-directory-names"><i class="fa fa-check"></i><b>4.1.1</b> Note about directory names</a></li>
+<li class="chapter" data-level="4.1.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#note-about-directory-names"><i class="fa fa-check"></i><b>4.1.1</b> Note about directory names</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#using-exiftool"><i class="fa fa-check"></i><b>4.2</b> Using ExifTool</a>
+<li class="chapter" data-level="4.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool"><i class="fa fa-check"></i><b>4.2</b> Using ExifTool</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#running-exiftool-via-the-terminal."><i class="fa fa-check"></i><b>4.2.1</b> Running ExifTool via the terminal.</a></li>
-<li class="chapter" data-level="4.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#viewing-exif-data-on-a-single-image"><i class="fa fa-check"></i><b>4.2.2</b> Viewing exif data on a single image</a></li>
-<li class="chapter" data-level="4.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images."><i class="fa fa-check"></i><b>4.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
+<li class="chapter" data-level="4.2.1" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#running-exiftool-via-the-terminal."><i class="fa fa-check"></i><b>4.2.1</b> Running ExifTool via the terminal.</a></li>
+<li class="chapter" data-level="4.2.2" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#viewing-exif-data-on-a-single-image"><i class="fa fa-check"></i><b>4.2.2</b> Viewing exif data on a single image</a></li>
+<li class="chapter" data-level="4.2.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images."><i class="fa fa-check"></i><b>4.2.3</b> Using ExifTool to add copyright information to the images.</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-csv-via-exiftool.html#summary-1"><i class="fa fa-check"></i><b>4.3</b> Summary</a></li>
+<li class="chapter" data-level="4.3" data-path="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html"><a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#summary-1"><i class="fa fa-check"></i><b>4.3</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html"><i class="fa fa-check"></i><b>5</b> Resize images for upload to Zooniverse via ImageMagick</a>
 <ul>
@@ -163,13 +163,13 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="use-exiftool-to-bulk-extract-metadata-from-images" class="section level1" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Use ExifTool to bulk-extract metadata from images</h1>
+<div id="use-exiftool-to-bulk-extract-metadata-from-images" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Use ExifTool to bulk-extract metadata from images<a href="use-exiftool-to-bulk-extract-metadata-from-images.html#use-exiftool-to-bulk-extract-metadata-from-images" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Now that we have added copyright information and resized all of our images, we need to create a data file with information about each image we plan to upload to the zooniverse.Exiftool will allow you to batch extract data from a whole folder of images and save it to a .csv file. We need this .csv for use in R.</p>
 <p>For more information about the following steps, consult <a href="https://www.weareavp.com/exiftool-tutorial-series">this series of tutorials</a> on line. Video 4 in the series is especially helpful.</p>
 <p>We will again be using terminal and the command-line interface. We will generate the csv from the parent directory (the one containing the directory of images).We do so to prevent having anything in our image folder other than images (i.e. the new .csv file gets saved one level above the folder with images).</p>
-<div id="write-csv-from-the-parent-directory" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Write csv from the parent directory</h2>
+<div id="write-csv-from-the-parent-directory" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Write csv from the parent directory<a href="use-exiftool-to-bulk-extract-metadata-from-images.html#write-csv-from-the-parent-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You should create the csv by specifying the folder containing the images
 for which you want the data, without being in that folder. From the
 folder with the images, use cd .. to navigate to the parent folder that
@@ -189,8 +189,8 @@ correctfilename.csv in the parent directory.</p>
 <li><p>It will save the csv to the parent, rather than the child directory.</p></li>
 </ol>
 </div>
-<div id="assign-the-csv-a-correct-file-name" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Assign the csv a correct file name</h2>
+<div id="assign-the-csv-a-correct-file-name" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Assign the csv a correct file name<a href="use-exiftool-to-bulk-extract-metadata-from-images.html#assign-the-csv-a-correct-file-name" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the code above, we used <em>correctfilename.csv</em> as a placeholder file
 name for the csv file that we were making with exifTool. In reality, we
 want to use meaningful file names whenever we create files. Keep in mind
@@ -217,15 +217,15 @@ following components in the file name:</p>
 from the parent folder would be:</p>
 <p><code>$ exiftool -common -csv Card_4 &gt; exif_2021_R1.csv</code></p>
 </div>
-<div id="moving-the-file-to-the-correct-location" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Moving the file to the correct location</h2>
+<div id="moving-the-file-to-the-correct-location" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Moving the file to the correct location<a href="use-exiftool-to-bulk-extract-metadata-from-images.html#moving-the-file-to-the-correct-location" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The last step in all of this image processing is to copy the exif
 metadata file you just created to the main NoCoWild Data subfolder.</p>
 <p>Navigate to t://Bart_s04/Research_group/NoCoWild/Data/exif_metadata and
 save a copy of the file you just created there.</p>
 </div>
-<div id="summary-3" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Summary</h2>
+<div id="summary-3" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Summary<a href="use-exiftool-to-bulk-extract-metadata-from-images.html#summary-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>By the end of this step, you will have created a .csv file in the parent directory to the folder containing all of the images you are preparing. You will have saved a copy of that .csv file in the designated location the t:// drive.</p>
 
 </div>
@@ -240,7 +240,6 @@ save a copy of the file you just created there.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -280,6 +279,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

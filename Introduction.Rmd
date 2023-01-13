@@ -1,0 +1,17 @@
+# Introduction {-}
+Managing thousands of game camera images and extracting data from them is a complex and somewhat daunting task. Keeping track of them over time, so that data between years can be examined and so that new questions can be asked of the data, requires careful thought and attention to detail.
+
+This book is a guide to managing those data. Ultimately, it will also present some basics on how to extract meaningful information from the data once images have been classified on the Zooniverse.
+
+Erika has been working with *SLU Mammal Crew* alum [Brett Ford](https://www.zooniverse.org/projects/barthelmess/north-country-wild/about/team), a data scientist at [Embark Vet](https://embarkvet.com/) to streamline the process of managing our camera trap data.
+
+This book is organized into three parts.
+
+Part I includes all of the general information about how files are organized for the project and is required reading for everyont.
+
+Part II presents the **preferred approach** for working with game camera images developed with Brett.  This approach uses a streamlined set of Python and R tools and reduces the possibility of errors.
+
+Part III presents a second, much more labor intensive and possibly error-prone approach. It is the approach that we used prior to working with Brett and is documented simply in case need arises. 
+
+Most readers should read through Parts I and II of the book.
+

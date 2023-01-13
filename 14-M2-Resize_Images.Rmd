@@ -1,0 +1,37 @@
+# Resize images for upload to Zooniverse via ImageMagick
+
+The Zooniverse sets a maximum image size of 1MB. Our cameras take higher
+resolution pictures, generally in the realm of 3.5MB. Thus, we need
+ to batch resize the photos for upload to the Zooniverse. To do so,
+we use another command-line software called ImageMagick.
+
+We have installed ImageMagick on the iMac in the lab. However, if you
+wish to install it on your own mac, see Appendix 1. Additional Details
+and code snippets, for instructions on how to install "Homebrew", a
+package manager for the Mac, and then use Homebrew to install
+imagemagick.
+
+## Resizing images
+
+With imagemagick installed, open a terminal window and move to the directory with the images you wish to resize (see chapter 4 to learn more about how move around the terminal).
+
+Once you have changed directories to the desired folder, type the following line of code in the terminal:
+
+`magick mogrify -resize "2000>" -define jpeg:extent=900kb *.JPG`
+
+Note that the .JPG is case-sensitive. If the images are labeled .jpg,
+then type that instead.
+
+This line of code basically says "Turn on imagemagick and use it to
+resize photos. Their maximum width or height (whichever is larger) will
+be 2000 pixels. Their final size should be not greater than 900kb. Do this for all
+of the images (the `*.JPG` where `*` is a wildcard) in the folder.
+
+Resizing takes a long time. For example, to run about 4000 photos
+took 1hr and 10 minutes.
+
+
+Proceed through all of the folders, resizing images until all images in the **Processed** subfolders are less than 1MB in size.
+
+## Summary
+At the end of the image resize step, each folder of *processed* images will have a set of images each less than 1kb in size.

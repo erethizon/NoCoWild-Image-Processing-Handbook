@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook</title>
-  <meta name="description" content="Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook" />
+  <title>Chapter 4 Add copyright and read EXIF data from images to .csv via exifTool | North Country Wild Image Processing and Uploading Handbook</title>
+  <meta name="description" content="Chapter 4 Add copyright and read EXIF data from images to .csv via exifTool | North Country Wild Image Processing and Uploading Handbook" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook" />
+  <meta property="og:title" content="Chapter 4 Add copyright and read EXIF data from images to .csv via exifTool | North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Familiarize yourself with NoCoWildDataProcessing RStudio project | North Country Wild Image Processing and Uploading Handbook" />
+  <meta name="twitter:title" content="Chapter 4 Add copyright and read EXIF data from images to .csv via exifTool | North Country Wild Image Processing and Uploading Handbook" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="use-exiftool-to-bulk-extract-metadata-from-images.html"/>
-<link rel="next" href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html"/>
+<link rel="prev" href="organize-images-on-the-external-hard-drive.html"/>
+<link rel="next" href="resize-images-for-upload-to-zooniverse-via-imagemagick.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -163,106 +163,157 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="familiarize-yourself-with-nocowilddataprocessing-rstudio-project" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Familiarize yourself with NoCoWildDataProcessing RStudio project<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#familiarize-yourself-with-nocowilddataprocessing-rstudio-project" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Overview<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let’s take a step back and think about our workflow. At this point, we have organized all of our image files on the hard drive, creating both the <em>raw</em> and <em>processed</em> folders of images. We have renamed images to reflect the metadata we wish to tie them to, have added copyright information and resized the images for upload to zooniverse. If necessary, we also repaired any problems with Dates and Times in the image exif data. We’ve generated a .csv file that has, for each image, the important bits of exifdata stored in the .csv file.</p>
-<p>Before we can push the images to the Zooniverse platform for ID, we need to create what the Zooniverse folks call the <em>manifest file</em>, a .csv that is uploaded alongside the images that contains important metadata about them that the Zooniverse interprets.</p>
-<p>We set our game cameras to take a burst of up to three images each time
-the camera is triggered. We call each set of 3 images a single
-<em>event.</em> However, our folder of images is just a set of files. We need
-a way to assign each image to the proper camera trap event. We have R
-code that we use to do just that.</p>
-</div>
-<div id="organization-of-our-project-in-rstudio" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Organization of our project in RStudio<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#organization-of-our-project-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We have a RStudio project called <em>NoCoWildDataProcessing</em> that we use for preparing the Zooniverse manifest file.</p>
-<p>To assign images to the proper event, you will need to know the location
-(file path) to the folder containing the images (and only the images, no
-other files can be in the folder) and the location of the exif metadata
-file for that folder that was created in Section 6 above.</p>
-<p>We use a special structure (Figure 7.1) to keep this project running
-smoothly when being used by many different people.</p>
+<div id="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Add copyright and read EXIF data from images to .csv via exifTool<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Any time an image is made with a digital camera (including your phone camera, our game cameras, etc.), regardless of make, data are embedded in the image file. You never see these data unless you look for them. The embedded information is called “EXIF data” where EXIF stands for “exchangeable image file format” and it includes all of the metadata associated with an image, such as the exposure time, ISO, etc. Programs such as Adobe Lightroom can be used to view the exif data. How much exif data is collected depends on the camera and its features. For example, a camera with built in gps will encode the location where the photo was taken. If you’re not into digital photography, you may not be aware that this information is stored with every digital image.</p>
+<p>We will need exif data to be able to assign images to proper events based on their time stamp. We will also add exif data to our images by adding copyright information. We will use a free tool called “ExifTool” to do so.</p>
+<div id="finding-your-way-around-the-mac-terminal-command-line-interface" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Finding your way around the mac terminal (command line interface)<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#finding-your-way-around-the-mac-terminal-command-line-interface" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use of ExifTool (and another tool called “ImageMagick” we will use in a later step) requires use of the command-line interface. On a mac, this interface is called the “terminal” and is also sometimes referred to as “bash.”</p>
+<p>To access the terminal on a mac, you go to the search bar (the tool that looks like a magnifying glass) in the upper right of the screen and search “terminal” (fig 4.1). Once you see the terminal icon, click on it to open the terminal interface.</p>
 
-<div class="figure"><span style="display:block;" id="fig:fig7-1"></span>
-<img src="images/fig7.1.RStudio_organization.png" alt="Organization of the NoCoWildDataProcessing project in RStudio."  />
+<div class="figure"><span style="display:block;" id="fig:fig4-1"></span>
+<img src="images/fig4.1.search_for_terminal.png" alt="Using spotlight search on a mac to open the terminal interface."  />
 <p class="caption">
-Figure 7.1: Organization of the NoCoWildDataProcessing project in RStudio.
+Figure 4.1: Using spotlight search on a mac to open the terminal interface.
 </p>
 </div>
-<div id="code" class="section level3 hasAnchor" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Code<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <code>Code</code> folder is where we keep all of the .Rmd files and .R files
-for actually running processes in RStudio. The Code folder contains
-three subfolders: <code>PreZooniverse</code>, <code>PostZooniverse</code>, and
-<code>Functions.</code> In this manual, we will only make use of the
-PreZooniverse and Functions subfolders.</p>
-<p>PreZooniverse contains two subfolders: <em>Explanatory Rmd files</em> and
-<em>Code to Run</em>. You will be using the .Rmd file called
-<em>PreZooniverse.Rmd</em> located in the <em>Code to Run</em> folder.</p>
-<p>PreZooniverse.Rmd relies on several custom functions located in the
-Functions folder. You will not need to look inside of the Functions
-folder, but it must be in place and must contain the correct .R files in
-order for the scripts in PreZooniverse.Rmd to run properly.</p>
-<p>The files in the Explanatory Rmd files folder provide more detailed
-descriptions of the steps involved in developing the functions we use in
-our project.</p>
+<p> 
+ </p>
+<p>Table 4.1 shows a list of some of the common command-line functions.</p>
+<table style="width:97%;">
+<colgroup>
+<col width="20%" />
+<col width="77%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Command</th>
+<th align="left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">cd directory</td>
+<td align="left">changes path from working directory to named directory
+where “directory” is the name of the directory you
+wish to navigate to.</td>
+</tr>
+<tr class="even">
+<td align="left">cd ..</td>
+<td align="left">changes your directory to the parent directory from the
+one you are currently in (note the space before the ..)</td>
+</tr>
+<tr class="odd">
+<td align="left">ls</td>
+<td align="left">lists all visible files in your directory</td>
+</tr>
+<tr class="even">
+<td align="left">pwd</td>
+<td align="left">lists path of your current directory (“print working
+directory”)</td>
+</tr>
+<tr class="odd">
+<td align="left">. vs ..</td>
+<td align="left">“.” Specifies the directory you are currently in,
+whereas “..” specifies the parent directory</td>
+</tr>
+</tbody>
+</table>
+<p>The terminal window presents a way to move around directories (folders)
+on your computer, run software, and execute other commands without using
+the “graphical user interface”, or “GUI” that you are most familiar with
+(the Menu-driven system where you click with your mouse to make things
+happen). There are several different ways in which we must use the
+terminal for image processing.</p>
+<div id="note-about-directory-names" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Note about directory names<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#note-about-directory-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The command-line has trouble understanding folder names if there is a
+space in the folder name. For example, if I have a folder called <code>Card 4</code>, I specify it by writing <code>Card\ 4</code></p>
+<p>The <code>\</code> tells the computer that the name is continuing. The space
+followed by the 4 tells it that these are the remaining parts of the
+directory name.</p>
+<p>Avoid problems with the terminal by using <code>\</code> or not otherwise including spaces in filenames.</p>
+<p>Also, this guide is written assuming you are using the iMac in the
+Barthelmess research lab. If you are trying to use these commands on
+another mac, there may be slight differences. If you are trying to use
+these commands on a PC, you will find that the PC operating system uses
+different characters to indicate a file path. Thus, this code will get
+you on the right path on a PC, but will not be sufficient as is.</p>
+<p>A neat trick for changing the directory folder path is to drop the folder icon (not from the terminal) onto the <code>\$</code> prompt inside of the terminal. The terminal
+will then indicate the full path to that directory. Try this:</p>
+<p><code>cd \[drop folder with files here after you type cd\]</code></p>
+<p>Terminal will change the working directory to the correct file path!</p>
 </div>
-<div id="data" class="section level3 hasAnchor" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Data<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The Data folder is where we keep only <strong>source data files</strong>. These are
-files that R will suck in for processing, but that will <strong>never</strong><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> be
-edited or saved over in order to ensure reproducibility.</p>
 </div>
-<div id="output" class="section level3 hasAnchor" number="7.2.3">
-<h3><span class="header-section-number">7.2.3</span> Output<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The Output folder is where we save the outputs of the code (as opposed
-to source files used to produce the analysis). This is where we save all
-kinds of outputs including data files and plots. The Output folder is
-arranged into various subfolders. The key Output subfolders for the
-purposes of this manual are in the PreZooniverse subfolder and are
-called ImagesByEvent and Manifests.</p>
+<div id="using-exiftool" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Using ExifTool<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="running-exiftool-via-the-terminal." class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Running ExifTool via the terminal.<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#running-exiftool-via-the-terminal." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Running ExifTool is fairly straightforward, as long as you don’t get too
+bogged down in command-line commands, which can be confusing. To start
+ExifTool, type “exiftool” after the prompt on the command line. If the
+computer tells you that ExifTool does not exist, see <strong>Appendix 1. Additional Details and code snippets</strong>, for instructions on how to install ExifTool.</p>
+<ul>
+<li><p>If ExifTool is installed, the manual (called the “man” or “manpage”
+in command line talk) window will open orienting you to features of
+the program. To get out of that window and back to the command-line,
+type “Q”.</p></li>
+<li><p>Scroll through manpage using scroll bar</p></li>
+<li><p>Exit the man by typing q and return.</p></li>
+</ul>
 </div>
-</div>
-<div id="accessing-the-project-from-github" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Accessing the project from Github<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#accessing-the-project-from-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Github is a version control system used by people who code. We use
-Github because it allows folks to simultaneously work on the project and
-it <strong>protects</strong> us against unwanted changes (we can roll back the code
-to any prior state). However, using github within RStudio, though pretty
-straightforward, can be a bit confusing at first.</p>
-<p>All of the R code you need to process the file is in the RStudio project
-called <strong>NoCoWildDataProcessing.</strong> It is available for <a href="https://github.com/erethizon/NoCoWildDataProcessing">access on github</a> (fig 7.2):</p>
+<div id="viewing-exif-data-on-a-single-image" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Viewing exif data on a single image<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#viewing-exif-data-on-a-single-image" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the terminal, change to the directory that contains the files you
+want information from. You can easily do this by first typing <code>cd</code> after the terminal prompt and then dragging the folder icon from the folder on the NoCoWild hard drive that you wish to move to onto the terminal prompt (fig. 4.2).</p>
 
-<div class="figure"><span style="display:block;" id="fig:fig7-2"></span>
-<img src="images/fig7.2.github_view.png" alt="The NoCoWildDataProcessing project repository on GitHub"  />
+<div class="figure"><span style="display:block;" id="fig:fig4-2"></span>
+<img src="images/fig.4.2.bash_window1.png" alt="Changing directories and modifying exif data using the terminal interface. A shows in yellow the root directory terminal prompt. B shows in yellow the text that is automatically added after cd when you drop a folder icon onto the terminal window following the cd text. C shows in yellow the new terminal prompt, reflecting the directory in which the computer is working."  />
 <p class="caption">
-Figure 7.2: The NoCoWildDataProcessing project repository on GitHub
+Figure 4.2: Changing directories and modifying exif data using the terminal interface. <strong>A</strong> shows in yellow the root directory terminal prompt. <strong>B</strong> shows in yellow the text that is automatically added after <code>cd</code> when you drop a folder icon onto the terminal window following the <code>cd</code> text. <strong>C</strong> shows in yellow the new terminal prompt, reflecting the directory in which the computer is working.
 </p>
 </div>
-<p><strong>Please work with Erika to make sure you are accessing
-the GitHub project correctly so as to allow different folks to work on the
-project at the same time.</strong></p>
+<p>Note the name of an image in the directory.</p>
+<p>Then, in the terminal at the command-line prompt (usually a <code>\$</code> or <code>\&gt;</code>),
+type</p>
+<p><code>exiftool imagename.jpg</code></p>
+<p>where imagename.jpg is the name of the file you want data from. The
+computer will then display the information you seek. An example of
+output is in Figure 12 below.</p>
+<p><strong>Figure 13. Example output from viewing exif data from a single image with exiftool.</strong></p>
+<p>You will use this method to ensure that copyright information is
+properly added.</p>
 </div>
-<div id="summary-4" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Summary<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#summary-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="using-exiftool-to-add-copyright-information-to-the-images." class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Using ExifTool to add copyright information to the images.<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#using-exiftool-to-add-copyright-information-to-the-images." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To add copyright information to the images, make sure you are in the
+folder that contains the images you wish to add copyright information,
+and type the following at the command-line:</p>
+<pre><code>$ exiftool -overwrite_original -rights=&quot;Copyright&quot; -CopyrightNotice=&quot;Bart Lab and Nature Up North&quot; *.JPG
+
+ (put this all on one line)</code></pre>
+<p>This basically says to the computer: “Open exiftool, and overwrite new
+information into the original metadata. Add a field called ‘Copyright’
+and fill the field with”Bart Lab and Nature Up North”. Do this for all
+of the files in the folder.”</p>
+<p>Once you have run this code, examine the exif data for a few of the
+images in the folder using the method described for viewing exif data for a single image above and make sure the copyright information is present.</p>
+</div>
+</div>
+<div id="summary-1" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Summary<a href="add-copyright-and-read-exif-data-from-images-to-.csv-via-exiftool.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At the end of the copyright addition step, each folder of images will have the appropriate copyright information embedded into the image exif data using ExifTool. We take this step so that if anyone downloads one of our images from the zooniverse and tries to use it commercially, we have evidence that the image is ours.</p>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="4">
-<li id="fn4"><p>Never ever ever!<a href="familiarize-yourself-with-nocowilddataprocessing-rstudio-project.html#fnref4" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="use-exiftool-to-bulk-extract-metadata-from-images.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="use-rstudio-to-assign-each-image-to-the-proper-camera-trap-event-and-to-create-the-zooniverse-manifest.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="organize-images-on-the-external-hard-drive.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resize-images-for-upload-to-zooniverse-via-imagemagick.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -293,7 +344,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/07-Familiarize-data-processing.Rmd",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/04-Add_copyright.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -301,7 +352,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/07-Familiarize-data-processing.Rmd",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/04-Add_copyright.Rmd",
 "text": null
 },
 "download": null,

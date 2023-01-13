@@ -1,20 +1,14 @@
-# Introduction
-## Process Overview
+# (PART) Part I - Project Overview {-}
+# Process Overview
 
 There are many steps required to properly process our game camera images. A workflow diagram (Figure 1.1) highlights the 9 steps that are required.
 
 
 
 
-(ref:figure1-1) Steps involved in preparing images for upload to Zooniverse
-
-
-
-```{r, echo = FALSE, figure1-1, fig.cap = '(ref:figure1-1)'}
+```{r, echo = FALSE, fig.cap = 'Steps involved in preparing images for upload to Zooniverse'}
 knitr::include_graphics("images/fig1.1.overall_workflow_diagram.jpg")
 ```
-
-
 
 
 
@@ -24,7 +18,6 @@ With camera traps, it is possible to generate a LOT of data, very quickly. Proce
 
 We work on this project from three file locations (Figure 1.2):
 
-(ref:fig1-2) File and folder organization for the North Country Wild Project
 
 1. The NoCoWild folder on the t:// drive
     - t://Bart_s04/Research_group/NoCoWild
@@ -34,7 +27,7 @@ We work on this project from three file locations (Figure 1.2):
 3.  An external hard drive attached to the iMac in JHS 115
 
 
-```{r, echo = FALSE, fig1-2, fig.cap = '(ref:fig1-2)'}
+```{r, echo = FALSE, fig.cap = 'File and folder organization for the North Country Wild Project'}
 #add figure 2 and a text reference as its caption
 knitr::include_graphics("images/fig1.2.file_folder_org.jpg") #figure
 ```
