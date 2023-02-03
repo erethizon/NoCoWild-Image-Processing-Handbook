@@ -10,3 +10,5 @@ fig:fig1-1
 fig:fig1-2
 overview
 data-management
+get-sd-cards
+fig:fig2-1
