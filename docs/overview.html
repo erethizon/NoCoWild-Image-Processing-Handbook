@@ -75,14 +75,14 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="part"><span><b>I Part I - Project Overview</b></span></li>
-<li class="chapter" data-level="1" data-path="process-overview.html"><a href="process-overview.html"><i class="fa fa-check"></i><b>1</b> Process Overview</a>
+<li class="chapter" data-level="1" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>1</b> Process Overview</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="process-overview.html"><a href="process-overview.html#datasheet-file-and-folder-locations"><i class="fa fa-check"></i><b>1.1</b> Datasheet, File and Folder Locations</a>
+<li class="chapter" data-level="1.1" data-path="overview.html"><a href="overview.html#data-management"><i class="fa fa-check"></i><b>1.1</b> Datasheet, File and Folder Locations</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="process-overview.html"><a href="process-overview.html#file-and-folder-locations"><i class="fa fa-check"></i><b>1.1.1</b> File and folder locations</a></li>
-<li class="chapter" data-level="1.1.2" data-path="process-overview.html"><a href="process-overview.html#data-sheets"><i class="fa fa-check"></i><b>1.1.2</b> Data sheets</a></li>
-<li class="chapter" data-level="1.1.3" data-path="process-overview.html"><a href="process-overview.html#images"><i class="fa fa-check"></i><b>1.1.3</b> Images</a></li>
-<li class="chapter" data-level="1.1.4" data-path="process-overview.html"><a href="process-overview.html#data-files"><i class="fa fa-check"></i><b>1.1.4</b> Data files</a></li>
+<li class="chapter" data-level="1.1.1" data-path="overview.html"><a href="overview.html#file-and-folder-locations"><i class="fa fa-check"></i><b>1.1.1</b> File and folder locations</a></li>
+<li class="chapter" data-level="1.1.2" data-path="overview.html"><a href="overview.html#data-sheets"><i class="fa fa-check"></i><b>1.1.2</b> Data sheets</a></li>
+<li class="chapter" data-level="1.1.3" data-path="overview.html"><a href="overview.html#images"><i class="fa fa-check"></i><b>1.1.3</b> Images</a></li>
+<li class="chapter" data-level="1.1.4" data-path="overview.html"><a href="overview.html#data-files"><i class="fa fa-check"></i><b>1.1.4</b> Data files</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -104,21 +104,21 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="process-overview" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Process Overview<a href="process-overview.html#process-overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>There are many steps required to properly process our game camera images. A workflow diagram (Figure <a href="process-overview.html#fig:fig1-1">1.1</a>) highlights the 9 steps that are required.</p>
+<div id="overview" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Process Overview<a href="overview.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>There are many steps required to properly process our game camera images. A workflow diagram (Figure <a href="overview.html#fig:fig1-1">1.1</a>) highlights the 9 steps that are required.</p>
 <div class="figure"><span style="display:block;" id="fig:fig1-1"></span>
 <img src="images/fig1.1.overall_workflow_diagram.jpg" alt="Steps involved in preparing images for upload to Zooniverse" width="488" />
 <p class="caption">
 Figure 1.1: Steps involved in preparing images for upload to Zooniverse
 </p>
 </div>
-<div id="datasheet-file-and-folder-locations" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Datasheet, File and Folder Locations<a href="process-overview.html#datasheet-file-and-folder-locations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-management" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Datasheet, File and Folder Locations<a href="overview.html#data-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="file-and-folder-locations" class="section level3 hasAnchor" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> File and folder locations<a href="process-overview.html#file-and-folder-locations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">1.1.1</span> File and folder locations<a href="overview.html#file-and-folder-locations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>With camera traps, it is possible to generate a LOT of data, very quickly. Processing those data requires a lot of R files, as well. It is very easy to accidentally overwrite files or save things on e.g. your P:/ drive or your personal computer, making it very difficult for code to run well in the future (when the next student cannot access your files). For that reason, we have taken care to organize our files very carefully. <em>Please pay attention to the organization as described below and to apply it as you work on this project.</em></p>
-<p>We work on this project from three file locations (Figure 1.2):</p>
+<p>We work on this project from three file locations (Figure <a href="overview.html#fig:fig1-2">1.2</a>):</p>
 <ol style="list-style-type: decimal">
 <li><p>The NoCoWild folder on the t:// drive</p>
 <ul>
@@ -127,7 +127,7 @@ Figure 1.1: Steps involved in preparing images for upload to Zooniverse
 <li><p><a href="https://github.com/erethizon/NoCoWildDataProcessing">A shared RStudio project on github</a></p></li>
 <li><p>An external hard drive attached to the iMac in JHS 115</p></li>
 </ol>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<div class="figure"><span style="display:block;" id="fig:fig1-2"></span>
 <img src="images/fig1.2.file_folder_org.jpg" alt="File and folder organization for the North Country Wild Project" width="332" />
 <p class="caption">
 Figure 1.2: File and folder organization for the North Country Wild Project
@@ -135,19 +135,19 @@ Figure 1.2: File and folder organization for the North Country Wild Project
 </div>
 </div>
 <div id="data-sheets" class="section level3 hasAnchor" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Data sheets<a href="process-overview.html#data-sheets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">1.1.2</span> Data sheets<a href="overview.html#data-sheets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Blank copies of the paper data sheets we take into the field to record individual camera deployments can be found in the lab. In case you need to print more, the file is called <em>Camera deployment sheet</em> and there
 is a word copy as well as a pdf copy in the <em>Datasheets</em> folder in the <em>t:drive NoCoWild folder</em>.</p>
 </div>
 <div id="images" class="section level3 hasAnchor" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Images<a href="process-overview.html#images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Our game camera images take up a ton of hard drive space, so we keep them on an external hard drive attached to the iMac in the lab (Figure 1.2). That hard drive should <strong>never</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, ever leave the lab!!!</p>
+<h3><span class="header-section-number">1.1.3</span> Images<a href="overview.html#images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Our game camera images take up a ton of hard drive space, so we keep them on an external hard drive attached to the iMac in the lab (Figure <a href="overview.html#fig:fig1-2">1.2</a>). That hard drive should <strong>never</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, ever leave the lab!!!</p>
 <p>In the unusual circumstance in which you can’t work directly in the lab (thanks, COVID-19!) we have a second, back up hard drive for loan.</p>
 <p>The name of the main image hard drive is “NoCoWild”. It contains
 images other than our game camera projects, as well. You may add images to this hard drive, but please don’t delete images unless Erika is sitting next to you, saying “yes, it is ok to delete that” so that it can be her fault if something goes horribly wrong.</p>
 </div>
 <div id="data-files" class="section level3 hasAnchor" number="1.1.4">
-<h3><span class="header-section-number">1.1.4</span> Data files<a href="process-overview.html#data-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">1.1.4</span> Data files<a href="overview.html#data-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We keep data files in two locations. Exif metadata files about sets of images (see below for explanation) as well as unmodified classification or other files from the Zooniverse platform are stored on the t:drive in the Data folder.</p>
 <p>The RStudio project is where we store some data products (after
 processing in R) and where we store all of the code we use for image processing and analysis. Depending on what stage of the project you are in, files may be found in the “Code”, “Data” or “Output” folders.</p>
@@ -165,7 +165,7 @@ processing in R) and where we store all of the code we use for image processing 
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>I mean NEVER, EVER, EVER. Got it?<a href="process-overview.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>I mean NEVER, EVER, EVER. Got it?<a href="overview.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

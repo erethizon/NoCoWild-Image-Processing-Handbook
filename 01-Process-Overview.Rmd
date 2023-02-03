@@ -1,22 +1,18 @@
 # (PART) Part I - Project Overview {-}
-# Process Overview
+# Process Overview {#overview}
 
-There are many steps required to properly process our game camera images. A workflow diagram (Figure 1.1) highlights the 9 steps that are required.
+There are many steps required to properly process our game camera images. A workflow diagram (Figure \@ref(fig:fig1-1)) highlights the 9 steps that are required.
 
-
-
-
-```{r, echo = FALSE, fig.cap = 'Steps involved in preparing images for upload to Zooniverse'}
+```{r, fig1-1, echo = FALSE, fig.cap = 'Steps involved in preparing images for upload to Zooniverse'}
 knitr::include_graphics("images/fig1.1.overall_workflow_diagram.jpg")
 ```
 
 
-
-## Datasheet, File and Folder Locations
+## Datasheet, File and Folder Locations {#data-management}
 ### File and folder locations
 With camera traps, it is possible to generate a LOT of data, very quickly. Processing those data requires a lot of R files, as well. It is very easy to accidentally overwrite files or save things on e.g. your P:/ drive or your personal computer, making it very difficult for code to run well in the future (when the next student cannot access your files). For that reason, we have taken care to organize our files very carefully. *Please pay attention to the organization as described below and to apply it as you work on this project.*
 
-We work on this project from three file locations (Figure 1.2):
+We work on this project from three file locations (Figure \@ref(fig:fig1-2)):
 
 
 1. The NoCoWild folder on the t:// drive
@@ -27,7 +23,7 @@ We work on this project from three file locations (Figure 1.2):
 3.  An external hard drive attached to the iMac in JHS 115
 
 
-```{r, echo = FALSE, fig.cap = 'File and folder organization for the North Country Wild Project'}
+```{r, fig1-2,echo = FALSE, fig.cap = 'File and folder organization for the North Country Wild Project'}
 #add figure 2 and a text reference as its caption
 knitr::include_graphics("images/fig1.2.file_folder_org.jpg") #figure
 ```
@@ -39,7 +35,7 @@ is a word copy as well as a pdf copy in the *Datasheets* folder in the *t:drive 
 
 ### Images
 
-Our game camera images take up a ton of hard drive space, so we keep them on an external hard drive attached to the iMac in the lab (Figure 1.2). That hard drive should **never**[^1], ever leave the lab!!! 
+Our game camera images take up a ton of hard drive space, so we keep them on an external hard drive attached to the iMac in the lab (Figure \@ref(fig:fig1-2)). That hard drive should **never**[^1], ever leave the lab!!! 
 
 In the unusual circumstance in which you can't work directly in the lab (thanks, COVID-19!) we have a second, back up hard drive for loan.
 
