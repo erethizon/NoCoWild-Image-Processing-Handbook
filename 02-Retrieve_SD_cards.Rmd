@@ -15,6 +15,5 @@ Regardless, **it is critical** that you keep track of which SD card comes from w
 
 When you return to the lab, you will use the card reader attached to the iMac to upload the images.
 
-Add picture here of someone in the field with a camera.
 
 [^1]: CRITICAL!

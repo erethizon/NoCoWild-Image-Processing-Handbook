@@ -12,3 +12,14 @@ overview
 data-management
 get-sd-cards
 fig:fig2-1
+fig:fig3-1
+fig:fig4-2
+using-terminal
+introduction-1
+accessing-the-terminal
+note-about-directory-names
+using-exiftool
+running-exiftool-via-the-terminal.
+viewing-exif-data-on-a-single-image
+using-exiftool-to-add-copyright-information-to-the-images.
+summary

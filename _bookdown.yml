@@ -8,4 +8,6 @@ language:
     chapter_name: "Chapter "
 
 rmd_files:
-  ["index.Rmd", "Introduction.Rmd", "01-Process-Overview.Rmd", "02-Retrieve_SD_cards.Rmd"]
+  ["index.Rmd", "Introduction.Rmd",
+  "01-Process-Overview.Rmd", "02-Retrieve_SD_cards.Rmd",
+  "03-Using-the-terminal.Rmd"]

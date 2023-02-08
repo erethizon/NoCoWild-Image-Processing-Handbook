@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Using the “terminal” (command line interface) on a mac | North Country Wild Image Processing and Uploading Handbook</title>
+  <meta name="description" content="Chapter 3 Using the “terminal” (command line interface) on a mac | North Country Wild Image Processing and Uploading Handbook" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Using the “terminal” (command line interface) on a mac | North Country Wild Image Processing and Uploading Handbook" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Using the “terminal” (command line interface) on a mac | North Country Wild Image Processing and Uploading Handbook" />
+  
+  
+  
+
+<meta name="author" content="Erika L. Barthelmess" />
+
+
+<meta name="date" content="2023-02-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="get-sd-cards.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Image Processing Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="part"><span><b>I Part I - Project Overview</b></span></li>
+<li class="chapter" data-level="1" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>1</b> Process Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="overview.html"><a href="overview.html#data-management"><i class="fa fa-check"></i><b>1.1</b> Datasheet, File and Folder Locations</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="overview.html"><a href="overview.html#file-and-folder-locations"><i class="fa fa-check"></i><b>1.1.1</b> File and folder locations</a></li>
+<li class="chapter" data-level="1.1.2" data-path="overview.html"><a href="overview.html#data-sheets"><i class="fa fa-check"></i><b>1.1.2</b> Data sheets</a></li>
+<li class="chapter" data-level="1.1.3" data-path="overview.html"><a href="overview.html#images"><i class="fa fa-check"></i><b>1.1.3</b> Images</a></li>
+<li class="chapter" data-level="1.1.4" data-path="overview.html"><a href="overview.html#data-files"><i class="fa fa-check"></i><b>1.1.4</b> Data files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="get-sd-cards.html"><a href="get-sd-cards.html"><i class="fa fa-check"></i><b>2</b> Retrieve SD Cards from Cameras</a></li>
+<li class="chapter" data-level="3" data-path="using-terminal.html"><a href="using-terminal.html"><i class="fa fa-check"></i><b>3</b> Using the “terminal” (command line interface) on a mac</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="using-terminal.html"><a href="using-terminal.html#introduction-1"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="using-terminal.html"><a href="using-terminal.html#accessing-the-terminal"><i class="fa fa-check"></i><b>3.2</b> Accessing the terminal</a></li>
+<li class="chapter" data-level="3.3" data-path="using-terminal.html"><a href="using-terminal.html#note-about-directory-names"><i class="fa fa-check"></i><b>3.3</b> Note about directory names</a></li>
+<li class="chapter" data-level="3.4" data-path="using-terminal.html"><a href="using-terminal.html#summary"><i class="fa fa-check"></i><b>3.4</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">North Country Wild Image Processing and Uploading Handbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="using-terminal" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Using the “terminal” (command line interface) on a mac<a href="using-terminal.html#using-terminal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introduction<a href="using-terminal.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that we have our images collected from the field, it is time to prepare them for upload to the zooniverse platform for the species identification step. Game cameras collect a LOT of images, and we need to basically “curate” these images so that they are easy to keep track of. The steps involve:</p>
+<ol style="list-style-type: decimal">
+<li>Copying the images from the SD card into a “Raw” folder on the hard drive</li>
+<li>Copying, renaming, and resizing the images and placing them in a “Processed” folder on the hard drive.</li>
+<li>Generating a metadata file about the processed images</li>
+</ol>
+<p>In the past, each of these steps involved a lot of pointing and clicking and had lots of opportunity for user error. Since then, lab alumn Brett Ford has written a series of Python scripts that automate these tasks and reduce the potential for error.</p>
+<p>To run the python scripts, you will need to use the computer’s command-line interface, also known as the “terminal” or “bash.” The rest of this chapter helps you learn how to navigate around the terminal on a mac.</p>
+</div>
+<div id="accessing-the-terminal" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Accessing the terminal<a href="using-terminal.html#accessing-the-terminal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To access the terminal on a mac, go to the search bar (the tool that looks like a magnifying glass) in the upper right of the screen and search “terminal” (figure <a href="using-terminal.html#fig:fig3-1">3.1</a>). Once you see the terminal icon, click on it to open the terminal interface.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig3-1"></span>
+<img src="images/fig3.1.search_for_terminal.png" alt="Using spotlight search on a mac to open the terminal " width="678" />
+<p class="caption">
+Figure 3.1: Using spotlight search on a mac to open the terminal
+</p>
+</div>
+<p> 
+ </p>
+<p>Table 3.1 shows a list of some of the common command-line functions.</p>
+<table style="width:97%;">
+<colgroup>
+<col width="20%" />
+<col width="77%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Command</th>
+<th align="left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">cd directory</td>
+<td align="left">changes path from working directory to named directory
+where “directory” is the name of the directory you
+wish to navigate to.</td>
+</tr>
+<tr class="even">
+<td align="left">cd ..</td>
+<td align="left">changes your directory to the parent directory from the
+one you are currently in (note the space before the ..)</td>
+</tr>
+<tr class="odd">
+<td align="left">ls</td>
+<td align="left">lists all visible files in your directory</td>
+</tr>
+<tr class="even">
+<td align="left">pwd</td>
+<td align="left">lists path of your current directory (“print working
+directory”)</td>
+</tr>
+<tr class="odd">
+<td align="left">. vs ..</td>
+<td align="left">“.” Specifies the directory you are currently in,
+whereas “..” specifies the parent directory</td>
+</tr>
+</tbody>
+</table>
+<p>The terminal window presents a way to move around directories (folders)
+on your computer, run software, and execute other commands without using
+the “graphical user interface”, or “GUI” that you are most familiar with
+(the Menu-driven system where you click with your mouse to make things
+happen). There are several different ways in which we must use the
+terminal for image processing.</p>
+</div>
+<div id="note-about-directory-names" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Note about directory names<a href="using-terminal.html#note-about-directory-names" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The command-line has trouble understanding folder names if there is a
+space in the folder name. For example, if I have a folder called <code>Card 4</code>, I specify it by writing <code>Card\ 4</code></p>
+<p>The <code>\</code> tells the computer that the name is continuing. The space
+followed by the 4 tells it that these are the remaining parts of the
+directory name.</p>
+<p>Avoid problems with the terminal by using <code>\</code> or not otherwise including spaces in filenames.</p>
+<p>Also, this guide is written assuming you are using the iMac in the
+Barthelmess research lab. If you are trying to use these commands on
+another mac, there may be slight differences. If you are trying to use
+these commands on a PC, you will find that the PC operating system uses
+different characters to indicate a file path. Thus, this code will get
+you on the right path on a PC, but will not be sufficient as is.</p>
+<p>A neat trick for changing the directory folder path is to drop the folder icon (not from the terminal) onto the <code>\$</code> prompt inside of the terminal. The terminal
+will then indicate the full path to that directory. Try this:</p>
+<p><code>cd [drop folder with files here after you type cd]</code></p>
+<p>Terminal will change the working directory to the correct file path!</p>
+</div>
+<div id="summary" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Summary<a href="using-terminal.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At the end of the copyright addition step, each folder of images will have the appropriate copyright information embedded into the image exif data using ExifTool. We take this step so that if anyone downloads one of our images from the zooniverse and tries to use it commercially, we have evidence that the image is ours.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="get-sd-cards.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/03-Using-the-terminal.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/03-Using-the-terminal.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
