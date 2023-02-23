@@ -1,6 +1,6 @@
 # Using the "terminal" (command line interface) on a mac {#using-terminal}
 
-## Introduction
+## Introduction {#intro-terminal}
 Now that we have our images collected from the field, it is time to prepare them for upload to the zooniverse platform for the species identification step. Game cameras collect a LOT of images, and we need to basically "curate" these images so that they are easy to keep track of.  The steps involve:
 
 1. Copying the images from the SD card into a "Raw" folder on the hard drive
@@ -11,13 +11,13 @@ In the past, each of these steps involved a lot of pointing and clicking and had
 
 To run the python scripts, you will need to use the computer's command-line interface, also known as the "terminal" or "bash." The rest of this chapter helps you learn how to navigate around the terminal on a mac.
 
-## Accessing the terminal
+## Accessing the terminal {#access-terminal}
 
 To access the terminal on a mac,  go to the search bar (the tool that looks like a magnifying glass) in the upper right of the screen and search "terminal" (figure \@ref(fig:fig3-1)). Once you see the terminal icon, click on it to open the terminal interface.
 
 
 ```{r, fig3-1,echo = FALSE, fig.height = 3, fig.align = 'center', fig.cap = 'Using spotlight search on a mac to open the terminal '}
-knitr::include_graphics("images/fig3.1.search_for_terminal.png") 
+knitr::include_graphics("images/Chapter-3/fig3.1.search_for_terminal.png") 
 ```
 
 
@@ -53,7 +53,7 @@ the "graphical user interface", or "GUI" that you are most familiar with
 happen). There are several different ways in which we must use the
 terminal for image processing.
 
-## Note about directory names
+## Note about directory names {#directory-names}
 
 The command-line has trouble understanding folder names if there is a
 space in the folder name. For example, if I have a folder called `Card 4`, I specify it by writing `Card\ 4`
@@ -78,7 +78,5 @@ will then indicate the full path to that directory. Try this:
 
 Terminal will change the working directory to the correct file path!
 
-
-
-## Summary
-At the end of the copyright addition step, each folder of images will have the appropriate copyright information embedded into the image exif data using ExifTool. We take this step so that if anyone downloads one of our images from the zooniverse and tries to use it commercially, we have evidence that the image is ours.
+## Summary {#ch3-summary}
+The "terminal" interface is one of the main ways we will run the tools we need for managing our images. You should become comfortable working with the terminal in order to proceed with the next chapters.

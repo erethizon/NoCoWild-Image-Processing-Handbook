@@ -3,7 +3,7 @@
 To retrieve the SD cards means you need to visit the cameras in the field. Those trips entail either collecting the SD card and the camera, or visiting the camera to put in fresh batteries and a fresh SD card (figure \@ref(fig:fig2-1)).
 
 ```{r, fig2-1,echo = FALSE, fig.height = 3, fig.align = 'center', fig.cap = 'Peyton Schmitt (2023) deploying a camera'}
-knitr::include_graphics("images/fig2.1.peyton_schmitt_w_camera.jpg") #figure
+knitr::include_graphics(file.path(here::here(),"images", "Chapter-2","fig2.1.peyton_schmitt_w_camera.jpg")) #figure
 ```
 
 
