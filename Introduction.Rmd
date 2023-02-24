@@ -3,7 +3,7 @@ Managing thousands of game camera images and extracting data from them is a comp
 
 This book is a guide to managing those data. Ultimately, it will also present some basics on how to extract meaningful information from the data once images have been classified on the Zooniverse.
 
-Erika has been working with *SLU Mammal Crew* alum [Brett Ford](https://www.zooniverse.org/projects/barthelmess/north-country-wild/about/team), a data scientist at [Embark Vet](https://embarkvet.com/) to streamline the process of managing our camera trap data.
+Erika has been working with *SLU Mammal Crew* alum [Brett Ford](https://www.zooniverse.org/projects/barthelmess/north-country-wild/about/team){#Brett}, a data scientist at [Embark Vet](https://embarkvet.com/) to streamline the process of managing our camera trap data.
 
 This book is organized into three parts.
 

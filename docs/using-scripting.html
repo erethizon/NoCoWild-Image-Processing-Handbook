@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | North Country Wild Image Processing and Uploading Handbook</title>
-  <meta name="description" content="Page not found | North Country Wild Image Processing and Uploading Handbook" />
+  <title>Chapter 5 Introduction to scripting | North Country Wild Image Processing and Uploading Handbook</title>
+  <meta name="description" content="Chapter 5 Introduction to scripting | North Country Wild Image Processing and Uploading Handbook" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | North Country Wild Image Processing and Uploading Handbook" />
+  <meta property="og:title" content="Chapter 5 Introduction to scripting | North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | North Country Wild Image Processing and Uploading Handbook" />
+  <meta name="twitter:title" content="Chapter 5 Introduction to scripting | North Country Wild Image Processing and Uploading Handbook" />
   
   
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="hard-drive-org.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -131,18 +131,98 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="using-scripting" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Introduction to scripting<a href="using-scripting.html#using-scripting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="scripting-intro" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction<a href="using-scripting.html#scripting-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that you understand how we organize our files, it is time to learn how to use our python scripts to automate the image processing steps. For many students, this will be the most confusing part of the process, so please read the instructions carefully.</p>
 </div>
+<div id="python-scripts-overview" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Python Scripts<a href="using-scripting.html#python-scripts-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Notice the expanded folder called <code>North-Country-Wild</code> in figure <a href="using-scripting.html#fig:fig5-1">5.1</a>. It contains the <code>PythonScripts</code> folder that you will need to access to run our scripts.</p>
+<p>Brett has created a python script called <code>upload_and_process_images.py</code> located in the folder called <code>PythonScripts</code> inside of th <code>North-Country-Wild</code> folder in the root directory of the NoCoWild hard drive (figure <a href="using-scripting.html#fig:fig5-1">5.1</a>). The other two scripts in the folder are used for pushing files to the zooniverse once they are processed.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-1"></span>
+<img src="images/Chapter-5/fig5.1.python_scripts_folder.png" alt="Python Script files inside of the PythonScripts folder"  />
+<p class="caption">
+Figure 5.1: Python Script files inside of the PythonScripts folder
+</p>
+</div>
+<p><br />
+To use the script you will need to:</p>
+<ul>
+<li>Open a terminal window (See <a href="using-terminal.html#access-terminal">“Accessing the terminal” in Chapter 3</a> for a refresher).</li>
+<li>From the terminal, cd into the PythonScripts folder by dragging the folder icon onto the terminal after typing <code>cd</code> on the command line</li>
+<li>To access the script and learn about its subcommands, type <code>python3 upload_and_process_images.py -h</code>. Text with information about the script subcommands will display in the terminal window because you added <code>-h</code> after the name of the script (figure <a href="using-scripting.html#fig:fig5-2">5.2</a>).</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-2"></span>
+<img src="images/Chapter-5/fig5.2.terminal_showing_script_commands.png" alt="Terminal window showing location in PythonScripts folder and subcommands for the upload_and_process_images.py script"  />
+<p class="caption">
+Figure 5.2: Terminal window showing location in PythonScripts folder and subcommands for the upload_and_process_images.py script
+</p>
+</div>
+</div>
+<div id="script-subcommands" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Script subcommands<a href="using-scripting.html#script-subcommands" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can see that there are three possible subcommands, each of which take several different arguments (Table 4.1).</p>
+<p>Table 4.1 shows the list of script subcommands and their arguments</p>
+<table style="width:98%;">
+<colgroup>
+<col width="55%" />
+<col width="42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Subcommand</th>
+<th align="center">Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>change_file_size_and_copyright</code></td>
+<td align="center">This subcommand takes as arguments the path to the processed images which have already been renamed, and resizes them and adds copyright information.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>copy_raw_images_change_file_size_and_copyright</code></td>
+<td align="center">This subcommand takes as arguments the camera number and sd card number, each as three-digit integers, and copies, resizes, and adds copyright information to the images; if a three digit integer is not provided, the script will automatically add leading zeros</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>completely_process_images_from_sd_card</code></td>
+<td align="center">This subcommand takes a number of different arguments (use <code>-h</code> after the subcommand to see them) and completely process images from the sd card to separate directories (aka “folders”) for the raw and processed images</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="running-scripts" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Running the Scripts<a href="using-scripting.html#running-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before you can begin using the scripts to process image files, you need to create empty folders for the camera-sd card combination in the Raw and Processed folders for the given year.</p>
+<div id="completely-process-images-from-sd-card" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Completely process images from sd card<a href="using-scripting.html#completely-process-images-from-sd-card" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="copy-raw-images-change-file-size-and-copyright" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Copy raw images change file size and copyright<a href="using-scripting.html#copy-raw-images-change-file-size-and-copyright" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="change-file-size-and-copyright" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Change file size and copyright<a href="using-scripting.html#change-file-size-and-copyright" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="summary" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Summary<a href="using-scripting.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The “terminal” interface is one of the main ways we will run the tools we need for managing our images. You should become comfortable working with the terminal in order to proceed with the next chapters.</p>
+
+</div>
+</div>
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-
+<a href="hard-drive-org.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -174,7 +254,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/%s",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/05-Scripting.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -182,7 +262,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/%s",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/05-Scripting.Rmd",
 "text": null
 },
 "download": null,

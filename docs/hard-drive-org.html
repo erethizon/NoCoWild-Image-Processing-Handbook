@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>North Country Wild Image Processing and Uploading Handbook</title>
-  <meta name="description" content="North Country Wild Image Processing and Uploading Handbook" />
+  <title>Chapter 4 Hard Drive Organization | North Country Wild Image Processing and Uploading Handbook</title>
+  <meta name="description" content="Chapter 4 Hard Drive Organization | North Country Wild Image Processing and Uploading Handbook" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="North Country Wild Image Processing and Uploading Handbook" />
+  <meta property="og:title" content="Chapter 4 Hard Drive Organization | North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="North Country Wild Image Processing and Uploading Handbook" />
+  <meta name="twitter:title" content="Chapter 4 Hard Drive Organization | North Country Wild Image Processing and Uploading Handbook" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="using-terminal.html"/>
+<link rel="next" href="using-scripting.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -128,24 +128,60 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">North Country Wild Image Processing and Uploading Handbook</h1>
-<p class="author"><em>Erika L. Barthelmess</em></p>
-<p class="date"><em>2023-02-24</em></p>
+<div id="hard-drive-org" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Hard Drive Organization<a href="hard-drive-org.html#hard-drive-org" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="hard-drive-intro" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introduction<a href="hard-drive-org.html#hard-drive-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As you saw in <a href="Ch1-overview.html#Ch1-overview">Chapter 1</a> in the Process Overview diagram,once we have collected the SD cards from the field, we have a lot of image processing to do.</p>
+<p>There are two main steps to organizing the photos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Archive the files in the <em>Raw</em> folder</p></li>
+<li><p>Copy, rename, add copyright info, resize images and store in the <em>Processed</em> folder</p></li>
+</ol>
+<p>Because there are a lot of steps, there are also many opportunities to introduce error. One way we can reduce the likelihood of error is by automating much of the process.</p>
+<p>To understand how the processing will work, you first need to understand how we organize our files on the external hard drive.</p>
 </div>
-<div id="preface" class="section level1 unnumbered hasAnchor">
-<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><img src="images/NoCoWildLogo.jpg" /><!-- -->
-This book is designed to guide students in the Barthelmess research lab, affectionally known as the <em>SLU Mammal Crew</em>, through the steps required to process game camera images for upload to the <a href="https://www.zooniverse.org/projects/barthelmess/north-country-wild">zooniverse platform</a>. It is meant as a follow along guide that lives on the web.</p>
+<div id="hard-drive-organization" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Hard Drive Organization<a href="hard-drive-org.html#hard-drive-organization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you click on the NoCoWild hard drive icon, you will see something that looks more-or-less like figure <a href="hard-drive-org.html#fig:fig4-1">4.1</a>. We create a new folder for each academic year (so, for example, 2022_Game_Camera_Photos has images from the 2022-2023 academic year).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-1"></span>
+<img src="images/Chapter-4/fig4.1.noco_wild_drive_organization.png" alt="Higher level view of the NoCoWild hard drive organization"  />
+<p class="caption">
+Figure 4.1: Higher level view of the NoCoWild hard drive organization
+</p>
+</div>
+<p><br />
+</p>
+<p>Within any particular year’s folder, we create a “Raw” folder and a “Processed” folder, and within each of those we create a folder for each Camera-SD card combination (figure <a href="hard-drive-org.html#fig:fig4-2">4.2</a>). Sometimes you will also see an extra folder or file within the Processed folder that are by-products of uploading images to the Zooniverese platform. For example, in figure <a href="hard-drive-org.html#fig:fig4-2">4.2</a>, you see a folder called “21-Oct-Upload” and a file called “exif_2022_…upload.csv”.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-2"></span>
+<img src="images/Chapter-4/fig4.2.processed_and_raw_folders.png" alt="Processed and Raw folders with subfolders for each camera + sd card combination"  />
+<p class="caption">
+Figure 4.2: Processed and Raw folders with subfolders for each camera + sd card combination
+</p>
+</div>
+<p><br />
+</p>
+<p>Figure <a href="hard-drive-org.html#fig:fig4-3">4.3</a> compares the Raw and Processed image folders for Camera-SD card C023_SD162. Notice in <strong>A</strong> that the folder just contains the original, raw images, named with whatever names were assigned by the game camera and at the size that was captured by the game camera. Contrast that with <strong>B</strong> and see that in the Processed folder for this same camera, the images have all been renamed to include the camera-sd card and date that the picture was taken. The images have also been resized to be smaller than 1MB for upload to Zooniverse.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-3"></span>
+<img src="images/Chapter-4/fig4.3.raw_vs_processed_images.png" alt="Comparison of the Raw and Processed images for Camera-SD card C023_SD162"  />
+<p class="caption">
+Figure 4.3: Comparison of the Raw and Processed images for Camera-SD card C023_SD162
+</p>
+</div>
+</div>
+<div id="hard-drive-summary" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Summary<a href="hard-drive-org.html#hard-drive-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The “terminal” interface is one of the main ways we will run the tools we need for managing our images. You should become comfortable working with the terminal in order to proceed with the next chapters.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="using-terminal.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="using-scripting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -176,7 +212,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/index.Rmd",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/04-Hard-Drive-Organization.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -184,7 +220,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/index.Rmd",
+"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/04-Hard-Drive-Organization.Rmd",
 "text": null
 },
 "download": null,
