@@ -1,0 +1,57 @@
+# Introduction to scripting  {#using-scripting}
+
+## Introduction {#scripting-intro}
+Now that you understand how we organize our files, it is time to learn how to use our python scripts to automate the image processing steps. For many students, this will be the most confusing part of the process, so please read the instructions carefully.
+
+## Python Scripts {#python-scripts-overview}
+Notice the expanded folder called `North-Country-Wild` in figure \@ref(fig:fig5-1). It contains the `PythonScripts` folder that you will need to access to run our scripts.
+
+Brett has created a python script called `upload_and_process_images.py` located in the folder called `PythonScripts` inside of th `North-Country-Wild` folder in the root directory of the NoCoWild hard drive (figure \@ref(fig:fig5-1)). The other two scripts in the folder are used for pushing files to the zooniverse once they are processed.
+
+
+```{r, fig5-1,echo = FALSE, fig.height = 3, fig.align = 'center', fig.cap = 'Python Script files inside of the PythonScripts folder'}
+knitr::include_graphics("images/Chapter-5/fig5.1.python_scripts_folder.png") 
+```
+\
+To use the script you will need to:
+
+- Open a terminal window (See ["Accessing the terminal" in Chapter 3 ](#access-terminal) for a refresher). 
+- From the terminal, cd into the PythonScripts folder by dragging the folder icon onto the terminal after typing `cd` on the command line
+- To access the script and learn about its subcommands, type `python3 upload_and_process_images.py -h`. Text with information about the script subcommands will display in the terminal window because you added `-h` after the name of the script (figure \@ref(fig:fig5-2)).
+
+
+```{r, fig5-2,echo = FALSE, fig.height = 4, fig.align = 'center', fig.cap = 'Terminal window showing location in PythonScripts folder and subcommands for the upload_and_process_images.py script'}
+knitr::include_graphics("images/Chapter-5/fig5.2.terminal_showing_script_commands.png") 
+```
+
+## Script subcommands {#script-subcommands}
+
+You can see that there are three possible subcommands, each of which take several different arguments (Table 4.1).
+
+
+Table 4.1 shows the list of script subcommands and their arguments
+
+  -----------------------------------------------------------------------
+  Subcommand                                          Arguments
+  ------------------------------------------------- -------------------------------------
+  `change_file_size_and_copyright`                    This subcommand takes as arguments the path to the processed images which                                                       have already been renamed, and resizes them and adds copyright                                                                  information.
+
+  `copy_raw_images_change_file_size_and_copyright`    This subcommand takes as arguments the camera number and sd card number,                                                        each as three-digit integers, and copies, resizes, and adds copyright                                                           information to the images; if a three digit integer is not provided, the                                                        script will automatically add leading zeros
+
+  `completely_process_images_from_sd_card`            This subcommand takes a number of different arguments (use `-h` after the                                                       subcommand to see them) and completely process images from the sd card to                                                       separate directories (aka "folders") for the raw and processed images
+  -----------------------------------------------------------------------
+
+
+## Running the Scripts {#running-scripts}
+Before you can begin using the scripts to process image files, you need to create empty folders for the camera-sd card combination in the Raw and Processed folders for the given year.
+
+### Completely process images from sd card
+
+### Copy raw images change file size and copyright
+
+### Change file size and copyright
+
+
+
+## Summary
+The "terminal" interface is one of the main ways we will run the tools we need for managing our images. You should become comfortable working with the terminal in order to proceed with the next chapters.
