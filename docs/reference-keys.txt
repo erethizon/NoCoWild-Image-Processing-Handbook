@@ -7,6 +7,11 @@ fig:fig4-2
 fig:fig4-3
 fig:fig5-1
 fig:fig5-2
+tab:table5-1
+tab:table5-2
+fig:fig5-3
+fig:fig5-4
+fig:fig5-5
 Ch1-overview
 data-management
 file-locations
@@ -28,7 +33,10 @@ scripting-intro
 python-scripts-overview
 script-subcommands
 running-scripts
-completely-process-images-from-sd-card
-copy-raw-images-change-file-size-and-copyright
-change-file-size-and-copyright
+complete-process
+other-subcommands
 summary
+extract-metadata-from-images
+get-correct-csv-name
+moving-the-file-to-the-correct-location
+summary-1

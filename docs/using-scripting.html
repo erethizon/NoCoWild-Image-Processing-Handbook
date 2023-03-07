@@ -23,7 +23,7 @@
 <meta name="author" content="Erika L. Barthelmess" />
 
 
-<meta name="date" content="2023-02-27" />
+<meta name="date" content="2023-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="hard-drive-org.html"/>
-
+<link rel="next" href="extract-metadata-from-images.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -106,11 +106,16 @@
 <li class="chapter" data-level="5.3" data-path="using-scripting.html"><a href="using-scripting.html#script-subcommands"><i class="fa fa-check"></i><b>5.3</b> Script subcommands</a></li>
 <li class="chapter" data-level="5.4" data-path="using-scripting.html"><a href="using-scripting.html#running-scripts"><i class="fa fa-check"></i><b>5.4</b> Running the Scripts</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="using-scripting.html"><a href="using-scripting.html#completely-process-images-from-sd-card"><i class="fa fa-check"></i><b>5.4.1</b> Completely process images from sd card</a></li>
-<li class="chapter" data-level="5.4.2" data-path="using-scripting.html"><a href="using-scripting.html#copy-raw-images-change-file-size-and-copyright"><i class="fa fa-check"></i><b>5.4.2</b> Copy raw images change file size and copyright</a></li>
-<li class="chapter" data-level="5.4.3" data-path="using-scripting.html"><a href="using-scripting.html#change-file-size-and-copyright"><i class="fa fa-check"></i><b>5.4.3</b> Change file size and copyright</a></li>
+<li class="chapter" data-level="5.4.1" data-path="using-scripting.html"><a href="using-scripting.html#complete-process"><i class="fa fa-check"></i><b>5.4.1</b> Completely process images from sd card</a></li>
+<li class="chapter" data-level="5.4.2" data-path="using-scripting.html"><a href="using-scripting.html#other-subcommands"><i class="fa fa-check"></i><b>5.4.2</b> Running other subcommands</a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="using-scripting.html"><a href="using-scripting.html#summary"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html"><i class="fa fa-check"></i><b>6</b> Use ExifTool to bulk-extract metadata from images</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#get-correct-csv-name"><i class="fa fa-check"></i><b>6.1</b> Determine the correct file name for the csv you will create</a></li>
+<li class="chapter" data-level="6.2" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#moving-the-file-to-the-correct-location"><i class="fa fa-check"></i><b>6.2</b> Moving the file to the correct location</a></li>
+<li class="chapter" data-level="6.3" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#summary-1"><i class="fa fa-check"></i><b>6.3</b> Summary</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -135,7 +140,7 @@
 <h1><span class="header-section-number">Chapter 5</span> Introduction to scripting<a href="using-scripting.html#using-scripting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="scripting-intro" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Introduction<a href="using-scripting.html#scripting-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now that you understand how we organize our files, it is time to learn how to use our python scripts to automate the image processing steps. For many students, this will be the most confusing part of the process, so please read the instructions carefully.</p>
+<p>Now that you understand how we organize our files, it is time to learn how to use our python scripts to automate the image processing steps. <strong>For many people, this will be the most confusing part of the process, so please read the instructions carefully.</strong></p>
 </div>
 <div id="python-scripts-overview" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Python Scripts<a href="using-scripting.html#python-scripts-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -148,10 +153,10 @@ Figure 5.1: Python Script files inside of the PythonScripts folder
 </p>
 </div>
 <p><br />
-To use the script you will need to:</p>
+To use the script you will need to:{#use-scripts}</p>
 <ul>
 <li>Open a terminal window (See <a href="using-terminal.html#access-terminal">“Accessing the terminal” in Chapter 3</a> for a refresher).</li>
-<li>From the terminal, cd into the PythonScripts folder by dragging the folder icon onto the terminal after typing <code>cd</code> on the command line</li>
+<li>From the terminal, cd into the PythonScripts folder by typing <code>cd</code> on the command line and then dragging the folder icon onto the terminal. Hit return when finished.</li>
 <li>To access the script and learn about its subcommands, type <code>python3 upload_and_process_images.py -h</code>. Text with information about the script subcommands will display in the terminal window because you added <code>-h</code> after the name of the script (figure <a href="using-scripting.html#fig:fig5-2">5.2</a>).</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-2"></span>
@@ -163,68 +168,156 @@ Figure 5.2: Terminal window showing location in PythonScripts folder and subcomm
 </div>
 <div id="script-subcommands" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Script subcommands<a href="using-scripting.html#script-subcommands" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can see that there are three possible subcommands, each of which take several different arguments (Table 4.1).</p>
-<p>Table 4.1 shows the list of script subcommands and their arguments</p>
-<table style="width:98%;">
+<p>You can see that there are three possible subcommands, each of which take several different arguments (Table <a href="using-scripting.html#tab:table5-1">5.1</a>).</p>
+<table>
+<caption><span id="tab:table5-1">Table 5.1: </span>List of python script subcommands and their arguments</caption>
 <colgroup>
-<col width="55%" />
-<col width="42%" />
+<col width="15%" />
+<col width="84%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left">Subcommand</th>
-<th align="center">Arguments</th>
+<th align="left">Arguments</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>change_file_size_and_copyright</code></td>
-<td align="center">This subcommand takes as arguments the path to the processed images which have already been renamed, and resizes them and adds copyright information.</td>
+<td align="left">change_file_size_and_copyright</td>
+<td align="left">This subcommand takes as arguments the path to the processed images which have already been renamed and resizes them and adds copyright information</td>
 </tr>
 <tr class="even">
-<td align="left"><code>copy_raw_images_change_file_size_and_copyright</code></td>
-<td align="center">This subcommand takes as arguments the camera number and sd card number, each as three-digit integers, and copies, resizes, and adds copyright information to the images; if a three digit integer is not provided, the script will automatically add leading zeros</td>
+<td align="left">copy_raw_images_change_file_size_and_copyright</td>
+<td align="left">This subcommand takes as arguments the camera number and sd card number, each as 3-digit integers, and copies, resizes, and adds copyright information to the images. If a 3-digit integer is not provided, the script will automatically add leading zeros.</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>completely_process_images_from_sd_card</code></td>
-<td align="center">This subcommand takes a number of different arguments (use <code>-h</code> after the subcommand to see them) and completely process images from the sd card to separate directories (aka “folders”) for the raw and processed images</td>
+<td align="left">completely_process_images_from_sd_card</td>
+<td align="left">This subcommand takes a number of different arguments (use -h after the subcommand to see them) and completely processes images from the sd card to separate directories (aka “folders”) for the raw and processed images.</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Further, most of these subcommands take arguments, which are typed into the terminal as <code>--argument-name</code> followed the required information. For example, Table <a href="using-scripting.html#tab:table5-2">5.2</a> shows the arguments that are required by the <code>completely_process_images_from_sd_card</code> subcommand.</p>
+<p><br />
+</p>
+<table>
+<caption><span id="tab:table5-2">Table 5.2: </span>List of arguments required by the completely_process_images_from_sd_card subcommand</caption>
+<colgroup>
+<col width="11%" />
+<col width="88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Argument.name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">h or help</td>
+<td align="left">shows the help menu</td>
+</tr>
+<tr class="even">
+<td align="left">memory-card-path</td>
+<td align="left">indicate the full path to the SD card on the computer; you can drag the folder onto the terminal</td>
+</tr>
+<tr class="odd">
+<td align="left">path-to-raw-images</td>
+<td align="left">indicate the full path to the Raw image folder where the Raw images should be deposited; you can drag the folder onto the terminal</td>
+</tr>
+<tr class="even">
+<td align="left">path-to-processed-images</td>
+<td align="left">indicate the full path to the Processed image folder where the processed images will be placed; you can drag the folder onto the terminal</td>
+</tr>
+<tr class="odd">
+<td align="left">camera-number</td>
+<td align="left">indicate the camera number that the memory card is associated with for this deployment as an integer not exceeding 3 digits; if you forget to include 3 digits the script will take care of it</td>
+</tr>
+<tr class="even">
+<td align="left">sd-card-number</td>
+<td align="left">indicate the sd card number that the images come from as an integer not exceeding 3 digits; if you forget to include 3 digits the script will take care of it</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="running-scripts" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Running the Scripts<a href="using-scripting.html#running-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Before you can begin using the scripts to process image files, you need to create empty folders for the camera-sd card combination in the Raw and Processed folders for the given year.</p>
-<div id="completely-process-images-from-sd-card" class="section level3 hasAnchor" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Completely process images from sd card<a href="using-scripting.html#completely-process-images-from-sd-card" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before you can begin using the scripts to process image files, you need to create empty folders for the camera-sd card combination in the Raw and Processed folders for the given year as shown in Chapter 4 <a href="hard-drive-org.html#hard-drive-organization">Section 4.2 Hard Drive Organization</a>. Please be careful in naming these folders so that the folder names are of the form <code>C***_SD***</code> where *** represents the 3-digit camera number (including a leading zero) and the 3-digit SD card number (including a leading zero), respectively.</p>
+<div id="complete-process" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Completely process images from sd card<a href="using-scripting.html#complete-process" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Most often, you will want to completely process all of the images on an SD card. As a reminder, in this process, running the python script correctly will:</p>
+<ul>
+<li><p>Copy all of the images from the SD card to the correctly labeled folder in the <code>Raw</code> image directory</p></li>
+<li><p>Copy all of the images from the <code>Raw</code> folder to the correct directory in the <code>Processed</code> folder</p></li>
+<li><p>Rename all of the images in the correct <code>Processed</code> folder so that the image name includes the camera-sd card as well as the time stamp the image was made, in addition to the original image name</p></li>
+<li><p>Resize the all of the images to just under 1MB in size for later upload to the zooniverse</p></li>
+<li><p>Add a copyright field with the words “Barthelmess Lab and Nature Up North” to all of the image exif data.</p></li>
+</ul>
+<p><br />
+</p>
+<p>Let’s assume for demonstration purposes that I have a number of images on an SD card in a folder called <code>Camera</code> and let’s further assume that the SD card was number 001 and the camera was number 001. I therefore have created a folder called <code>C001_SD001</code> in both the <code>Raw</code> and <code>Processed</code> folders on the hard drive. Notice what they look like prior to processing the scripts in Figure <a href="using-scripting.html#fig:fig5-3">5.3</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-3"></span>
+<img src="images/Chapter-5/fig5.3.demonstration_upload.png" alt="Raw and Processed folders for a demonstration set of images prior to image processing"  />
+<p class="caption">
+Figure 5.3: Raw and Processed folders for a demonstration set of images prior to image processing
+</p>
 </div>
-<div id="copy-raw-images-change-file-size-and-copyright" class="section level3 hasAnchor" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> Copy raw images change file size and copyright<a href="using-scripting.html#copy-raw-images-change-file-size-and-copyright" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+<strong>Specific instructions:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Obtain a paper copy of the data sheet associated with the specific deployment you intend to process and note the Camera number and SD card number.</p></li>
+<li><p>Open the correct year’s folder on the <code>NoCoWild</code> hard drive. Create a new, empty folder named <a href="using-scripting.html#running-scripts">as indicated above</a> in the <code>Raw</code> folder and in the <code>Processed</code> folder.</p></li>
+<li><p>Place the SD card into the card reader attached to the imac.</p></li>
+<li><p><a href="using-terminal.html#access-terminal">Open a terminal session</a> and <code>cd</code> to the <code>PythonScripts</code> folder (inside of the <code>North-Country-Wild folder on the</code>NoCoWild` hard drive). <a href="#use-scripts">Refresh your memory about how here</a></p></li>
+<li><p>Paste the following line of code at the cursor <code>python3 upload_and_process_images.py completely_process_images_from_sd_card</code> <strong>Do not press return after pasting</strong></p></li>
+<li><p>Paste the following line of code at the cursor <code>--memory-card-path</code> followed by a space and then drag the folder of images on the SD card onto the terminal <strong>Do not press return after pasting</strong></p></li>
+<li><p>Paste the following line of code at the cursor <code>--path-to-raw-images</code> followed by a space and then drag the appropriate Raw image folder onto the terminal. <strong>Do not press return after pasting</strong></p></li>
+<li><p>Paste the following line of code at the cursor <code>--path-to-processed-images</code> followed by a space and then drag the appropriate Raw image folder onto the terminal. <strong>Do not press return after pasting</strong></p></li>
+<li><p>Paste the following line of code at the cursor <code>--camera-number</code> followed by a space and then type the 3-digit camera number including a leading zero <strong>Do not press return after pasting</strong></p></li>
+<li><p>Paste the following line of code at the cursor <code>--sd-card-number</code> followed by a space and then type the 3-digit number for the SD card including a leading zero</p></li>
+<li><p>Hit <code>Return</code>. If you have no typos or other errors, the script will immediately begin processing the images.</p></li>
+</ol>
+Figure <a href="using-scripting.html#fig:fig5-4">5.4</a> shows the terminal window for steps 5-11 above. The terminal commands are highlighted in yellow.
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-4"></span>
+<img src="images/Chapter-5/fig5.4.complete-script.png" alt="Terminal window showing a complete script for processing images from a SD card. The terminal commands are highlighted in yellow and the output, showing that the script ran, follows below the terminal commands."  />
+<p class="caption">
+Figure 5.4: Terminal window showing a complete script for processing images from a SD card. The terminal commands are highlighted in yellow and the output, showing that the script ran, follows below the terminal commands.
+</p>
 </div>
-<div id="change-file-size-and-copyright" class="section level3 hasAnchor" number="5.4.3">
-<h3><span class="header-section-number">5.4.3</span> Change file size and copyright<a href="using-scripting.html#change-file-size-and-copyright" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+After the script ran, the resulting contents of the <code>Raw</code> and <code>Processed</code> image folders for this demonstration is shown in Figure <a href="using-scripting.html#fig:fig5-5">5.5</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-5"></span>
+<img src="images/Chapter-5/fig5.5.window-post-processing.png" alt="The same Raw and Processed folders for a demonstration set of images after image processing"  />
+<p class="caption">
+Figure 5.5: The same Raw and Processed folders for a demonstration set of images after image processing
+</p>
+</div>
+</div>
+<div id="other-subcommands" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Running other subcommands<a href="using-scripting.html#other-subcommands" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The process for running the other two subcommands, <code>copy_raw_images_change_file_size_and_copyright</code> and <code>change_file_size_and_copyright</code> is very similar. You will need to specify file paths and other arguments. But the overall process of running the scripts is the same:</p>
+<ol style="list-style-type: decimal">
+<li><code>python3 upload_and_process_images.py</code> followed by</li>
+<li>the appropriate subcommand, followed by</li>
+<li>each argument for the subcommand, with “answers” (e.g. file path, camera or sd card number) specified</li>
+</ol>
+<p>Remember, you can use the <code>-h</code> argument after a subcommand to open the help information in your terminal window to learn how to specify the arguments that go with a particular subcommand.</p>
 </div>
 </div>
 <div id="summary" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Summary<a href="using-scripting.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The “terminal” interface is one of the main ways we will run the tools we need for managing our images. You should become comfortable working with the terminal in order to proceed with the next chapters.</p>
+<p>Managing game camera images is a complex process. Images have to be associated with specific cameras and SD cards, have to be transferred to new folders, and have to be resized and renamed. Though the steps in this chapter may seem complex, imagine if you had to go through each of these steps for every individual image! There would be so many opportunities to introduce error. Instead, we are using a series of python scripts to streamline the process and reduce the propegation of errors in the data set.</p>
 
 </div>
 </div>
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="hard-drive-org.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="hard-drive-org.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="extract-metadata-from-images.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

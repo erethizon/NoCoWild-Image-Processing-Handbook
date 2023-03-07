@@ -1,0 +1,7 @@
+Argument name,Description
+h or help ,shows the help menu
+memory-card-path,indicate the full path to the SD card on the computer; you can drag the folder onto the terminal
+path-to-raw-images,indicate the full path to the Raw image folder where the Raw images should be deposited; you can drag the folder onto the terminal
+path-to-processed-images,indicate the full path to the Processed image folder where the processed images will be placed; you can drag the folder onto the terminal
+camera-number,indicate the camera number that the memory card is associated with for this deployment as an integer not exceeding 3 digits; if you forget to include 3 digits the script will take care of it
+sd-card-number,indicate the sd card number that the images come from as an integer not exceeding 3 digits; if you forget to include 3 digits the script will take care of it
