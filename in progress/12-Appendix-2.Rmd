@@ -1,0 +1,17 @@
+# Appendix 2 - Some Terminal Tricks
+
+## Counting the number of files in a directory using Terminal
+
+We can use the terminal to make quick work of some tasks that take a long time.
+
+For example, what if you want to count all of the image files in a folder?
+
+Using terminal, we might do the following:
+
+1.  cd to the directory you wish to count
+2.  type `find . -not -type d | egrep -v '\.jpg$' | wc -l` at the command line.
+
+The `-not -type d` excludes directories but would find symlinks and other non-regular files;
+change it to `-type f` to only find regular files. 
+
+
