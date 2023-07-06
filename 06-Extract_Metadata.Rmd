@@ -4,28 +4,19 @@ Now that we have added copyright information and resized all of our images, we n
 
 For more information about the following steps, consult [this series of tutorials](https://www.weareavp.com/exiftool-tutorial-series) on line. Video 4 in the series is especially helpful.
 
-We will again be using terminal and the command-line interface. We will generate the csv from the parent directory (the one containing the directory of images).We do so to prevent having anything in our image folder other than images (i.e. the new .csv file gets saved one level above the folder with images). 
+We will again be using terminal and the command-line interface. We will generate the csv from the parent directory (the one containing the directory of images).We do so to prevent having anything in our image folder other than images (i.e. the new .csv file gets saved one level above the folder with images).
 
 ## Determine the correct file name for the csv you will create {#get-correct-csv-name}
 
-In the code above, we used *correctfilename.csv* as a placeholder file
-name for the csv file that we were making with exifTool. In reality, we
-want to use meaningful file names whenever we create files. Keep in mind
-that the file is going to be moved, stored, and opened again, perhaps
-years later. We need to know what it is! Thus we will use a meaningful
-file naming convention.
+In the code above, we used *correctfilename.csv* as a placeholder file name for the csv file that we were making with exifTool. In reality, we want to use meaningful file names whenever we create files. Keep in mind that the file is going to be moved, stored, and opened again, perhaps years later. We need to know what it is! Thus we will use a meaningful file naming convention.
 
 We'd like to know, just from the file name, several things:
 
 1.  What the file contains (exif data)
 
-2.  What set of images the file is for (timeframe and round, if
-    relevant). Recall that the camera and sd card names are already
-    embedded in the image names, so we don't need that info in the file
-    name.
+2.  What set of images the file is for (timeframe and round, if relevant). Recall that the camera and sd card names are already embedded in the image names, so we don't need that info in the file name.
 
-So for data from the fall 2021 camera trapping season, we would use the
-following components in the file name:
+So for data from the fall 2021 camera trapping season, we would use the following components in the file name:
 
 -   "exif" to tell us that it contains exif data
 
@@ -33,47 +24,36 @@ following components in the file name:
 
 -   "R1" or "R2" etc. to tell us the round of deployments
 
--   The name of the folder containing the images it is referencing.
-## Write csv from the parent directory {#write-csv-from-parent}
+-   The name of the folder containing the images it is referencing. \## Write csv from the parent directory {#write-csv-from-parent}
 
-You should create the csv by specifying the folder containing the images
-for which you want the data, without being in that folder. From the
-folder with the images, use cd .. to navigate to the parent folder that
-contains the image folder.
+You should create the csv by specifying the folder containing the images for which you want the data, without being in that folder. From the folder with the images, use cd .. to navigate to the parent folder that contains the image folder.
 
-For the purpose of this example, assume that all of the images are in a
-folder called *C001_SD001*
+For the purpose of this example, assume that all of the images are in a folder called *C001_SD001*
 
 If you haven't already done so, navigate in the terminal to the parent directory that holds Card_4. Then write the following in the command line:
 
 `$ exiftool -common -csv C001_SD001 > correctfilename.csv`
 
-This code tells the computer to "Open exiftool, select the "common"
-(rather than all) the exif data, and make a csv using all of the images
-in the Card_4 folder and save it to a file called
-correctfilename.csv in the parent directory. 
+This code tells the computer to "Open exiftool, select the"common" (rather than all) the exif data, and make a csv using all of the images in the Card_4 folder and save it to a file called correctfilename.csv in the parent directory.
 
 Your exiftool command will do several things:
 
 1.  It will open the directory with the images
+
 2.  It will examine and extract the common pieces of exif information from each image and store them in a csv file and
 
 3.  It will save the csv to the parent, rather than the child directory.
 
-
-
-Thus, the line of code we would use to create the exif metadata file
-from the parent folder would be:
+Thus, the line of code we would use to create the exif metadata file from the parent folder would be:
 
 `$ exiftool -common -csv Card_4 > exif_2021_R1.csv`
 
 ## Moving the file to the correct location
 
-The last step in all of this image processing is to copy the exif
-metadata file you just created to the main NoCoWild Data subfolder.
+The last step in all of this image processing is to copy the exif metadata file you just created to the main NoCoWild Data subfolder.
 
-Navigate to t://Bart_s04/Research_group/NoCoWild/Data/exif_metadata and
-save a copy of the file you just created there.
+Navigate to t://Bart_s04/Research_group/NoCoWild/Data/exif_metadata and save a copy of the file you just created there.
 
 ## Summary
+
 By the end of this step, you will have created a .csv file in the parent directory to the folder containing all of the images you are preparing. You will have saved a copy of that .csv file in the designated location the t:// drive.

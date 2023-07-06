@@ -97,7 +97,7 @@ knitr::include_graphics("images/Chapter-5/fig5.3.demonstration_upload.png")
 
 7. Paste the following line of code at the cursor `--path-to-raw-images` followed by a space and then drag the appropriate Raw image folder onto the terminal. **Do not press return after pasting**
 
-8. Paste the following line of code at the cursor `--path-to-processed-images` followed by a space and then drag the appropriate Raw image folder onto the terminal. **Do not press return after pasting**
+8. Paste the following line of code at the cursor `--path-to-processed-images` followed by a space and then drag the appropriate Processed image folder onto the terminal. **Do not press return after pasting**
 
 9. Paste the following line of code at the cursor `--camera-number` followed by a space and then type the 3-digit camera number including a leading zero **Do not press return after pasting**
 

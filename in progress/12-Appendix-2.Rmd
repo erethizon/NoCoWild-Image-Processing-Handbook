@@ -11,7 +11,18 @@ Using terminal, we might do the following:
 1.  cd to the directory you wish to count
 2.  type `find . -not -type d | egrep -v '\.jpg$' | wc -l` at the command line.
 
-The `-not -type d` excludes directories but would find symlinks and other non-regular files;
-change it to `-type f` to only find regular files. 
+The `-not -type d` excludes directories but would find symlinks and other non-regular files; change it to `-type f` to only find regular files.
 
+## Deleting hidden files from a directory
 
+Sometimes copying image files causes the Apple operating system to create some extra "hidden" files in a directory of images. When this happens, if you don't catch them, the R code that assigns images to evants will crash. These images need to be removed from the directory and from the exif metadata file before further processing can take place.
+
+To delete just the hidden files from a directory, the syntax is as follows:
+
+From the parent directory, type:
+
+`find /filepath/ -maxdepth 1 -type f -name ".*" -delete`
+
+where `filepath` is the path to the directory containing the hidden files (you can just drag the folder onto the terminal if you want).
+
+Note that `maxdepth 1` is critical to keep from deleting the whole subdirectory.

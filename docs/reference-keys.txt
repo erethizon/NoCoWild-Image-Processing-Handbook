@@ -40,3 +40,4 @@ extract-metadata-from-images
 get-correct-csv-name
 moving-the-file-to-the-correct-location
 summary-1
+write-csv-from-parent
