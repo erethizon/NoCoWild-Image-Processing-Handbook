@@ -24,7 +24,9 @@ So for data from the fall 2021 camera trapping season, we would use the followin
 
 -   "R1" or "R2" etc. to tell us the round of deployments
 
--   The name of the folder containing the images it is referencing. \## Write csv from the parent directory {#write-csv-from-parent}
+-   The name of the folder containing the images it is referencing.
+
+## Write csv from the parent directory {#write-csv-from-parent}
 
 You should create the csv by specifying the folder containing the images for which you want the data, without being in that folder. From the folder with the images, use cd .. to navigate to the parent folder that contains the image folder.
 
