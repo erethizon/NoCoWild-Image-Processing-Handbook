@@ -6,13 +6,22 @@ For more information about the following steps, consult [this webpage](https://w
 
 We will again be using terminal and the command-line interface. 
 
+## Finding the time difference
+Oftentimes, when game cameras malfunction, they set the date to the original date/time associated with their manufacture and software build (e.g. January 1, 2020). It can be clunky to find out the exact time/date difference between the actual photos and the timestamp on the photos created by the camera. This website can be helpful!
 
-Code to add one month to the Date / Time Original exif field:
+[Time and Date](https://www.timeanddate.com/date/durationresult.html?m1=1&d1=1&y1=2020&m2=09&d2=04&y2=2024&h1=1&i1=20&s1=&h2=14&i2=05&s2=)
 
-From within the directory in which you plan to fix the dates/times, run the following line of code. IN this example, you are adding one month to the time stamp and are doing it to all of the image files in the directory.
+## Code to add one month to the Date / Time Original exif field:
+
+From within the directory in which you plan to fix the dates/times, run the following line of code. In this example, you are adding one month to the time stamp and are doing it to all of the image files in the directory.
 
 `exiftool "-DateTimeOriginal+=0:1:0 0:0:0" *.JPG`
 
+## Example 2 - Changing just the time but not the date
+
+Sometimes we accidentally set our cameras as pm when we should set the time as am, which means we need to subtract (or add, depending on the specifics) 12 hours to the time for each photo. Here is the code that will subtract 12 hours from the date/time on each image in a directory.
+
+`exiftool "-DateTimeOriginal-=0:0:0 12:0:0" *.JPG`
 ## Write csv from the parent directory
 
 You should create the csv by specifying the folder containing the images
