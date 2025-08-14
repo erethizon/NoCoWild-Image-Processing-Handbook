@@ -4,3 +4,4 @@
 *.Rproj
 #/docs
 *.html
+.DS_Store
