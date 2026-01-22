@@ -1,5 +1,10 @@
-# Upload manifest and images to Zooniverse via Panoptes
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
+# Upload manifest and images to Zooniverse via Panoptes
 
 The Zooniverse platform allows you to upload images for processing by
 drag-and-drop. This works fine for up to several hundred images, but is
@@ -23,8 +28,8 @@ manifest or any images to the subject set.** See Figure 16 for details.
 ![](media/image21.png){width="6.346153762029746in"
 height="3.5798818897637794in"}
 
-[]{#_Ref71106723 .anchor}Figure 16. Screenshot of the subject sets
-creator on the Zooniverse platform.
+Figure 16. Screenshot of the subject sets creator on the Zooniverse
+platform.
 
 Look near the top of the page to find the unique number that the
 Zooniverse assigns to your subject set. You will need to use this number
@@ -54,7 +59,7 @@ while this process takes place.
 
 ![](media/image22.png){width="6.5in" height="1.2291666666666667in"}
 
-[]{#_Ref71107143 .anchor}Figure 17. Sample screen read out as panoptes
-loads images to the Zooniverse.
+Figure 17. Sample screen read out as panoptes loads images to the
+Zooniverse.
 
 **You did it! Time to celebrate!**

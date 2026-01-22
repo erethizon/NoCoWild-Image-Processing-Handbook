@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Introduction to scripting | North Country Wild Image Processing and Uploading Handbook</title>
   <meta name="description" content="Chapter 5 Introduction to scripting | North Country Wild Image Processing and Uploading Handbook" />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Introduction to scripting | North Country Wild Image Processing and Uploading Handbook" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Erika L. Barthelmess" />
 
 
-<meta name="date" content="2024-05-14" />
+<meta name="date" content="2026-01-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -118,8 +118,9 @@
 <li class="chapter" data-level="6" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html"><i class="fa fa-check"></i><b>6</b> Use ExifTool to bulk-extract metadata from images</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#get-correct-csv-name"><i class="fa fa-check"></i><b>6.1</b> Determine the correct file name for the csv you will create</a></li>
-<li class="chapter" data-level="6.2" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#moving-the-file-to-the-correct-location"><i class="fa fa-check"></i><b>6.2</b> Moving the file to the correct location</a></li>
-<li class="chapter" data-level="6.3" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#summary-1"><i class="fa fa-check"></i><b>6.3</b> Summary</a></li>
+<li class="chapter" data-level="6.2" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#write-csv-from-parent"><i class="fa fa-check"></i><b>6.2</b> Write csv from the parent directory</a></li>
+<li class="chapter" data-level="6.3" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#moving-the-file-to-the-correct-location"><i class="fa fa-check"></i><b>6.3</b> Moving the file to the correct location</a></li>
+<li class="chapter" data-level="6.4" data-path="extract-metadata-from-images.html"><a href="extract-metadata-from-images.html#summary-1"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -151,7 +152,7 @@
 <p>Notice the expanded folder called <code>North-Country-Wild</code> in figure <a href="using-scripting.html#fig:fig5-1">5.1</a>. It contains the <code>PythonScripts</code> folder that you will need to access to run our scripts.</p>
 <p>Brett has created a python script called <code>upload_and_process_images.py</code> located in the folder called <code>PythonScripts</code> inside of th <code>North-Country-Wild</code> folder in the root directory of the NoCoWild hard drive (figure <a href="using-scripting.html#fig:fig5-1">5.1</a>). The other two scripts in the folder are used for pushing files to the zooniverse once they are processed.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-1"></span>
-<img src="images/Chapter-5/fig5.1.python_scripts_folder.png" alt="Python Script files inside of the PythonScripts folder"  />
+<img src="images/Chapter-5/fig5.1.python_scripts_folder.png" alt="Python Script files inside of the PythonScripts folder" width="930" />
 <p class="caption">
 Figure 5.1: Python Script files inside of the PythonScripts folder
 </p>
@@ -164,7 +165,7 @@ To use the script you will need to:{#use-scripts}</p>
 <li>To access the script and learn about its subcommands, type <code>python3 upload_and_process_images.py -h</code>. Text with information about the script subcommands will display in the terminal window because you added <code>-h</code> after the name of the script (figure <a href="using-scripting.html#fig:fig5-2">5.2</a>).</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-2"></span>
-<img src="images/Chapter-5/fig5.2.terminal_showing_script_commands.png" alt="Terminal window showing location in PythonScripts folder and subcommands for the upload_and_process_images.py script"  />
+<img src="images/Chapter-5/fig5.2.terminal_showing_script_commands.png" alt="Terminal window showing location in PythonScripts folder and subcommands for the upload_and_process_images.py script" width="927" />
 <p class="caption">
 Figure 5.2: Terminal window showing location in PythonScripts folder and subcommands for the upload_and_process_images.py script
 </p>
@@ -262,7 +263,7 @@ Figure 5.2: Terminal window showing location in PythonScripts folder and subcomm
 </p>
 <p>Let’s assume for demonstration purposes that I have a number of images on an SD card in a folder called <code>Camera</code> and let’s further assume that the SD card was number 001 and the camera was number 001. I therefore have created a folder called <code>C001_SD001</code> in both the <code>Raw</code> and <code>Processed</code> folders on the hard drive. Notice what they look like prior to processing the scripts in Figure <a href="using-scripting.html#fig:fig5-3">5.3</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-3"></span>
-<img src="images/Chapter-5/fig5.3.demonstration_upload.png" alt="Raw and Processed folders for a demonstration set of images prior to image processing"  />
+<img src="images/Chapter-5/fig5.3.demonstration_upload.png" alt="Raw and Processed folders for a demonstration set of images prior to image processing" width="896" />
 <p class="caption">
 Figure 5.3: Raw and Processed folders for a demonstration set of images prior to image processing
 </p>
@@ -282,9 +283,9 @@ Figure 5.3: Raw and Processed folders for a demonstration set of images prior to
 <li><p>Paste the following line of code at the cursor <code>--sd-card-number</code> followed by a space and then type the 3-digit number for the SD card including a leading zero</p></li>
 <li><p>Hit <code>Return</code>. If you have no typos or other errors, the script will immediately begin processing the images.</p></li>
 </ol>
-Figure <a href="using-scripting.html#fig:fig5-4">5.4</a> shows the terminal window for steps 5-11 above. The terminal commands are highlighted in yellow.
+<p>Figure <a href="using-scripting.html#fig:fig5-4">5.4</a> shows the terminal window for steps 5-11 above. The terminal commands are highlighted in yellow.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-4"></span>
-<img src="images/Chapter-5/fig5.4.complete-script.png" alt="Terminal window showing a complete script for processing images from a SD card. The terminal commands are highlighted in yellow and the output, showing that the script ran, follows below the terminal commands."  />
+<img src="images/Chapter-5/fig5.4.complete-script.png" alt="Terminal window showing a complete script for processing images from a SD card. The terminal commands are highlighted in yellow and the output, showing that the script ran, follows below the terminal commands." width="1270" />
 <p class="caption">
 Figure 5.4: Terminal window showing a complete script for processing images from a SD card. The terminal commands are highlighted in yellow and the output, showing that the script ran, follows below the terminal commands.
 </p>
@@ -292,7 +293,7 @@ Figure 5.4: Terminal window showing a complete script for processing images from
 <p><br />
 After the script ran, the resulting contents of the <code>Raw</code> and <code>Processed</code> image folders for this demonstration is shown in Figure <a href="using-scripting.html#fig:fig5-5">5.5</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5-5"></span>
-<img src="images/Chapter-5/fig5.5.window-post-processing.png" alt="The same Raw and Processed folders for a demonstration set of images after image processing"  />
+<img src="images/Chapter-5/fig5.5.window-post-processing.png" alt="The same Raw and Processed folders for a demonstration set of images after image processing" width="986" />
 <p class="caption">
 Figure 5.5: The same Raw and Processed folders for a demonstration set of images after image processing
 </p>
@@ -335,42 +336,42 @@ Figure 5.5: The same Raw and Processed folders for a demonstration set of images
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/05-Scripting.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/05-Scripting.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/edit/master/05-Scripting.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/erethizon/NoCoWild-Image-Processing-Handbook/blob/master/05-Scripting.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

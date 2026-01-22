@@ -22,6 +22,20 @@ From within the directory in which you plan to fix the dates/times, run the foll
 Sometimes we accidentally set our cameras as pm when we should set the time as am, which means we need to subtract (or add, depending on the specifics) 12 hours to the time for each photo. Here is the code that will subtract 12 hours from the date/time on each image in a directory.
 
 `exiftool "-DateTimeOriginal-=0:0:0 12:0:0" *.JPG`
+
+## Example 3 - Changing date and time
+
+Imagine we have a folder of images for which the camera defaults to its build date/time, so that the first image in the folder is dated January 1, 2020, at 2:02 am
+
+We actually deployed the camera on October 1, 2025, at 13:20 pm.
+
+Using the website flagged above, we determine that the time difference between the incorrect date and the start date and time for the camera deployment is 5 years, 9 months, 11 hours and 18 minutes. 
+
+We would use this code to make the repair:
+
+`exiftool "-DateTimeOriginal+=5:9:0 11:18:0" *.JPG`
+
+
 ## Write csv from the parent directory
 
 You should create the csv by specifying the folder containing the images
@@ -34,7 +48,7 @@ folder called *Card_4*
 
 If you haven't already done so, navigate in the terminal to the parent directory that holds Card_4. Then write the following in the command line:
 
-$ exiftool --common -csv Card_4 > correctfilename.csv
+$ exiftool -common -csv Card_4 > correctfilename.csv
 
 This code tells the computer to "Open exiftool, select the "common"
 (rather than all) the exif data, and make a csv using all of the images
@@ -80,7 +94,7 @@ following components in the file name:
 Thus, the line of code we would use to create the exif metadata file
 from the parent folder would be:
 
-`$ exiftool --common -csv Card_4  exif_2021_R1.csv`
+`$ exiftool -common -csv Card_4 > exif_2021_R1.csv`
 
 ## Moving the file to the correct location
 
